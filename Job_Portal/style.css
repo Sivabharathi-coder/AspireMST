@@ -1,0 +1,89 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+section.bg-light.text-center {
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+}
+
+input.form-control {
+  border-radius: 50px;
+  padding: 12px 20px;
+}
+
+.btn-primary {
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-weight: 500;
+}
+
+.card h5 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+footer {
+  font-size: 14px;
+}
+.custom-navbar {
+  background: linear-gradient(180deg, #8347ad99 0%, #8347ad 100%) 0% 0% no-repeat padding-box;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #ffc107;
+}
+
+
+.nav-link {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff !important;
+  margin: 0 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-hover:hover {
+  color: #ffc107 !important;
+  text-decoration: underline;
+}
+
+.btn-warning {
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: #fff;
+}
+.btn-theme {
+  background: linear-gradient(180deg, #8347ad99 0%, #8347ad 100%);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(131, 71, 173, 0.4);
+}
+
+.btn-theme:hover {
+  background: linear-gradient(180deg, #6f3b99 0%, #5e2c87 100%);
+  color: #fff;
+  transform: scale(1.05);
+}
+.bg-theme{
+      background: linear-gradient(180deg, #8347ad99 0%, #8347ad 100%);
+
+}
