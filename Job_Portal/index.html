@@ -35,7 +35,7 @@
 
     <section id="homeSection" class="text-center py-5 bg-page">
         <div class="container">
-            <h1 class="display-5 fw-bold">Explore Careers at Aspire Systems</h1>
+            <h1 class="display-5 fw-bold">Explore Care ers at Aspire Systems</h1>
             <p class="lead">Trusted by 500+ companies. Explore 10,000+ jobs now.</p>
             <form class="d-flex justify-content-center mt-4">
                 <input type="text" class="form-control w-50 me-2" placeholder="Search by title or location" />
@@ -75,7 +75,7 @@
     <section id="jobsSection" class="py-5 bg-page">
         <div class="container">
             <h2 class="text-center mb-4">Featured Jobs</h2>
-            <div class="row g-4">
+            <div id="jobContainer" class="row g-4">
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm">
                         <h5 class="card-title">Frontend Developer</h5>
@@ -151,7 +151,44 @@
                 localStorage.setItem("theme", "light");
             }
         });
+
+        const jobContainer = document.getElementById("jobContainer");
+
+        function dummyJobCard(title, location, salary) {
+            const col = document.createElement("div");
+            col.className = "col-md-4";
+            col.innerHTML = `
+      <div class="card p-3 shadow-sm">
+        <h5 class="card-title">${title}</h5>
+        <p>Aspire Systems - ${location}</p>
+        <p class="text-success">${salary}</p>
+        <a href="#" class="btn btn-theme">Apply Now</a>
+      </div>
+    `;
+            return col;
+        }
+
+        function loadMoreJobs() {
+            for (let i = 0; i < 3; i++) {
+                const title = ["React Developer", "QA Engineer", "Node.js Developer"][Math.floor(Math.random() * 3)];
+                const location = ["Chennai", "Bangalore", "Pune"][Math.floor(Math.random() * 3)];
+                const salary = ["₹6–9 LPA", "₹7–12 LPA", "₹8–14 LPA"][Math.floor(Math.random() * 3)];
+                jobContainer.appendChild(dummyJobCard(title, location, salary));
+            }
+        }
+
+        // // Initial job cards
+        // loadMoreJobs();
+        // loadMoreJobs(); // 6 to start
+
+        window.addEventListener("scroll", () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+                loadMoreJobs();
+            }
+        });
     </script>
+
+
 </body>
 
 </html>
