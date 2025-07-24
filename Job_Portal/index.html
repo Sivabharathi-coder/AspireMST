@@ -2,19 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aspire Careers - Find Your Dream Job</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar shadow-sm sticky-top">
+    <nav class="navbar navbar-expand-lg custom-navbar shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="assets/aspire_header_logo.svg" alt="Aspire Logo" width="40" height="40" class="me-2 logo-img">
+                <img src="assets/aspire_header_logo.svg" alt="Aspire Logo" width="40" height="40"
+                    class="me-2 logo-img" />
                 <span class="fw-bold fs-4 text-white">Aspire<span class="text-warning">Job</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -22,36 +22,29 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link nav-hover text-white" href="#" onclick="showHome()">Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link nav-hover text-white" href="#" onclick="showJobs()">Jobs</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link nav-hover text-white" href="#">Companies</a></li>
-                    <li class="nav-item"><a class="nav-link nav-hover text-white" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#" onclick="showHome()">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#" onclick="showJobs()">Jobs</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#">Companies</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#">Contact</a></li>
                 </ul>
                 <a href="#" class="btn btn-warning ms-3 fw-semibold px-4">Login</a>
+                <button id="themeToggle" class="btn btn-outline-light ms-3">Dark Mode</button>
             </div>
         </div>
     </nav>
 
-
-
-
-
-    <!-- Home Banner -->
-    <section id="homeSection" class="bg-light text-center py-5">
+    <section id="homeSection" class="text-center py-5 bg-page">
         <div class="container">
             <h1 class="display-5 fw-bold">Explore Careers at Aspire Systems</h1>
             <p class="lead">Trusted by 500+ companies. Explore 10,000+ jobs now.</p>
             <form class="d-flex justify-content-center mt-4">
-                <input type="text" class="form-control w-50 me-2" placeholder="Search by title or location">
+                <input type="text" class="form-control w-50 me-2" placeholder="Search by title or location" />
                 <button class="btn btn-theme">Search</button>
             </form>
         </div>
     </section>
 
-    <!-- Categories -->
-    <section id="categorySection" class="py-5">
+    <section id="categorySection" class="py-5 bg-page">
         <div class="container text-center">
             <h2 class="mb-4">Top Job Categories</h2>
             <div class="row g-4">
@@ -79,8 +72,7 @@
         </div>
     </section>
 
-    <!-- Featured Jobs -->
-    <section id="jobsSection" class="bg-light py-5">
+    <section id="jobsSection" class="py-5 bg-page">
         <div class="container">
             <h2 class="text-center mb-4">Featured Jobs</h2>
             <div class="row g-4">
@@ -112,27 +104,22 @@
         </div>
     </section>
 
-    <!-- Subscribe -->
-    <section id="subscribeSection" class="py-5 text-center">
+    <section id="subscribeSection" class="py-5 text-center bg-page">
         <div class="container">
             <h2>Get Job Alerts</h2>
             <p class="mb-4">Subscribe to receive latest job updates directly to your inbox.</p>
             <form class="d-flex justify-content-center">
-                <input type="email" class="form-control w-50 me-2" placeholder="Enter your email">
+                <input type="email" class="form-control w-50 me-2" placeholder="Enter your email" />
                 <button class="btn btn-theme">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-theme text-white text-center py-3">
         <p class="mb-0">© 2025 JobNow. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- JavaScript for Tab Interaction -->
     <script>
         function showJobs() {
             document.getElementById("homeSection").style.display = "none";
@@ -147,8 +134,24 @@
             document.getElementById("subscribeSection").style.display = "block";
             document.getElementById("jobsSection").style.display = "block";
         }
-    </script>
 
+        const themeToggleBtn = document.getElementById("themeToggle");
+        if (localStorage.getItem("theme") === "dark") {
+            document.body.classList.add("dark-mode");
+            themeToggleBtn.textContent = "Light Mode";
+        }
+
+        themeToggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                themeToggleBtn.textContent = "Light Mode";
+                localStorage.setItem("theme", "dark");
+            } else {
+                themeToggleBtn.textContent = "Dark Mode";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    </script>
 </body>
 
 </html>
