@@ -169,12 +169,16 @@
         }
 
         function loadMoreJobs() {
+            const fragment = document.createDocumentFragment();
+
             for (let i = 0; i < 3; i++) {
                 const title = ["React Developer", "QA Engineer", "Node.js Developer"][Math.floor(Math.random() * 3)];
                 const location = ["Chennai", "Bangalore", "Pune"][Math.floor(Math.random() * 3)];
                 const salary = ["₹6–9 LPA", "₹7–12 LPA", "₹8–14 LPA"][Math.floor(Math.random() * 3)];
-                jobContainer.appendChild(dummyJobCard(title, location, salary));
+                fragment.appendChild(dummyJobCard(title, location, salary));
             }
+
+            jobContainer.appendChild(fragment); 
         }
 
         // // Initial job cards
