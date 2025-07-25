@@ -23,3 +23,7 @@ const nums = [20, 5, 100, 10];
 nums.sort((a, b) => a - b);
 console.log(fruits.join(", "));
 console.log(fruits.slice(1, 3)); 
+
+
+
+
