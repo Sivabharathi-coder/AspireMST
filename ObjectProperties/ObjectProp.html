@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Object Methods</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        const user = {
+            name: "siva", age: 23
+        };
+        console.log(Object.keys(user));
+
+        const hidden = Object.create({}, {
+            hidden: {
+                value: 2, enumerable: false,
+            }
+        })
+        console.log("hidden", hidden)
+        console.log("hidden", hidden.hidden)
+        console.log("Object", Object.keys(hidden))
+        for (let val in hidden) {
+            console.log("val", val)
+        }
+
+
+
+        console.log("Seal", Object.seal(hidden))
+        const obj = {};
+        Object.defineProperties(obj, {
+            name: {
+                value: "Siva",
+                writable: true
+            },
+            age: {
+                value: 25,
+                writable: false
+            }
+        });
+        console.log("defineProperties", obj);
+        console.log(Object.getOwnPropertyDescriptors(obj));
+        console.log(Object.getOwnPropertyDescriptor(obj, "age"));
+
+
+        const names = [1, 2, 3, 4]
+        names.map((nam) => {
+            if (nam % 2 == 0) {
+                console.log("nam", nam)
+            }
+        })
+        const userData = {
+            name: "Siva",
+            age: 25,
+            email: "siva@example.com",
+            verified: true,
+            city: "Chennai"
+        };
+
+        const maskedEntries = Object.entries(userData).map(([key, value]) => {
+            if (typeof value === "string") {
+                return [key, "*****"];
+            }
+            return [key, value];
+        });
+
+        const maskedData = Object.fromEntries(maskedEntries);
+
+        console.log(maskedData);
+
+    </script>
+
+</body>
+
+</html>
