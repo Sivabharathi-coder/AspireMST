@@ -2,14 +2,37 @@
 <html>
 
 <head>
-    <title>JavaScript Object Methods</title>
+    <title>JavaScript Object</title>
 </head>
 
 <body>
-
-
+    <button id="start">Start Recording</button>
+    <button id="stop">Stop Recording</button>
+    <audio id="audio" controls></audio>
 
     <script>
+        let mediaRecorder;
+        let chunks = [];
+
+        document.getElementById("start").onclick = async () => {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+
+            mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(chunks, { type: "audio/ogg" });
+                const audioURL = URL.createObjectURL(blob);
+                document.getElementById("audio").src = audioURL;
+                chunks = [];
+            };
+
+            mediaRecorder.start();
+        };
+
+        document.getElementById("stop").onclick = () => {
+            mediaRecorder.stop();
+        };
+
         const user = {
             name: "siva", age: 23
         };
@@ -70,6 +93,43 @@
         const maskedData = Object.fromEntries(maskedEntries);
 
         console.log(maskedData);
+
+        const data = { name: "siva", age: 23 }
+
+        for (let key in data) {
+            console.log(key + ": key", user[key]);
+        }
+        for (let val of names) {
+            console.log("forOf", val);
+
+        }
+
+        const users = {
+            name: "Siva",
+            skills: ["HTML", "CSS", "JavaScript"]
+        };
+
+        for (let key in users) {
+            console.log(`${key}: ${users[key]}`);
+        }
+
+        users.skills.forEach(skill => {
+            console.log("Skill:", skill);
+        });
+
+        let a = [];
+        console.log("type:", typeof (a));
+        a.customProp = 10;
+        console.log("a:", a.length);
+        console.log("a:", a.customProp);
+        const comments = ['Top comment', ['Reply 1', ['Reply to reply']]];
+
+        console.log("flat array", comments.flat(0));
+        console.log("flat array", comments.flat(1));
+        console.log("flat array", comments.flat(2));
+
+
+
 
     </script>
 
