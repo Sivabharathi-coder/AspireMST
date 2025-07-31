@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fullscreen</title>
+    <style>
+        #myBox {
+            width: 300px;
+            height: 200px;
+            background-color: red;
+            text-align: center;
+            line-height: 200px;
+            margin: 20px auto;
+        }
+
+        #log {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myBox">Click for Fullscreen</div>
+    <div style="text-align:center;">
+        <button id="fullscreenBtn">Fullscreen</button>
+        <p id="log"></p>
+    </div>
+
+    <script>
+        const box = document.getElementById("myBox");
+        const btn = document.getElementById("fullscreenBtn");
+        const log = document.getElementById("log");
+
+        btn.addEventListener("click", () => {
+            if (!document.fullscreenElement) {
+                box.requestFullscreen().catch(err => {
+                    log.textContent = `Error attempting: ${err.message}`;
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        // When fullscreen is entered or exited
+        document.addEventListener("fullscreenchange", () => {
+            if (document.fullscreenElement) {
+                log.textContent = "Entered fullscreen mode!";
+                box.style.backgroundColor = "lightgreen";
+            } else {
+                log.textContent = "Exited fullscreen mode.";
+                box.style.backgroundColor = "lightblue";
+            }
+        });
+
+        // If an error occurs
+        document.addEventListener("fullscreenerror", () => {
+            log.textContent = "Failed to enter fullscreen mode.";
+        });
+
+    </script>
+
+</body>
+
+</html>

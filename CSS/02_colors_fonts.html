@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Colors & Fonts</title>
+  <title>Login Page</title>
   <style>
-    body {
-      background-color: #f0f0f0;
-      color: #333;
-      font-family: Arial, sans-serif;
-    }
-    h2 {
-      color: #007bff;
-      font-size: 30px;
+    .Form {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid black;
+      padding: 20px;
+      width: 300px;
     }
   </style>
 </head>
+
 <body>
-  <h2>Styled Heading</h2>
-  <p>This paragraph uses system font and base color.</p>
+  <form class="Form">
+    <label>Username</label>
+    <input type="text" />
+
+    <label>Password</label>
+    <input type="password" />
+
+    <button type="submit">Login</button>
+  </form>
 </body>
+
 </html>
