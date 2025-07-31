@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Dummy</title>
+    <link rel="stylesheets" href="">
+    </link>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" type="image/svg+xml">
+    <meta charset="UTF-8">
+    <meta name="description" content="this is an practice">
+    <meta name="keywords" content="HTML practice">
+    <meta name="author" content="Siva Bharathi">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="5"> -->
+    <!-- <meta http-equiv="refresh" content="2,url=https://developer.mozilla.org/en-US/"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+
+<body>
+    <h1>Hello </h1>
+
+
+    <header>
+        <h1>Hello Siva</h1>
+    </header>
+    <main>
+        <p>This is paragraph</p>
+        <video width="300" height="200" controls>
+            <source src="https://www.w3schools.com/tags/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support
+        </video>
+    </main>
+    <footer>
+        <p>&copy; 2025 all rights</p>
+    </footer>
+
+    <div class="globalclass" id="uniqueId" title="Title" style="color:#000000; background-color: #000000;"
+        data-author="Data">Practice Code</div>
+    <span style="width: 100; background-color: #000000;">Inline elements</span>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea atque sapiente quod facere fugiat officia vel quia
+        corrupti beatae quisquam temporibus iure, hic vero molestias, delectus consequatur. Possimus, ratione
+        laboriosam?</p>
+    <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores aperiam, nam adipisci doloribus illo tempora,
+        modi cum quam dignissimos perspiciatis quisquam quidem porro, quae dolorum reiciendis <em>hello</em> earum omnis
+        odit voluptatibus!</div>
+    <abbr title="World Health Organization">WHO</abbr>
+    <input spellcheck="true">
+    <input type="text" tabindex="2"><input type="text" tabindex="3"><input type="text" tabindex="1">
+    <br>
+
+    <div tabindex="3">I can be focused by keyboard</div>
+    <div tabindex="2">I can be focused by keyboard</div>
+    <div tabindex="-1">I can be focused by keyboard</div>
+
+    <script>
+        const data = document.getElementById("uniqueId");
+        const attdata = data.getAttribute("data-author");
+        console.log("data", attdata)
+    </script>
+</body>
+
+</html>

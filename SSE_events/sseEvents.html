@@ -1,0 +1,13 @@
+<script>
+
+    const source = new EventSource("/events");
+
+    source.onmessage = (event) => {
+        console.log("Message".event.data)
+    }
+
+    source.onerror = (event) => {
+        console.log("Message Error");
+    }
+
+</script>
