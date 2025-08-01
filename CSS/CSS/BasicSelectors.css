@@ -1,0 +1,70 @@
+.notebox {
+    border: 4px solid #666;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.warning {
+    border-color: orange;
+    font-weight: bold;
+}
+
+.danger {
+    color: red;
+}
+
+#notebox {
+    background-color: aquamarine;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+span {
+    background-color: yellow;
+}
+
+strong {
+    color: rebeccapurple;
+}
+
+em {
+    color: rebeccapurple;
+}
+
+
+ul>li:first-child {
+    color: red;
+}
+
+ul>li *:first-child {
+  font-weight: bold;
+}
+
+ input[type="text"]{
+    color: green;
+ }
+
+ li[class]{
+    font-size: larger;
+ }
+
+ li[class="a"]{
+    color: red;
+ }
+ 
+ li[class~="a"]{
+    background-color: green;
+ }
+
+ li[class^="b"]{
+    background-color: blueviolet;
+ }
+
+ li[class$="b"]{
+    color: orange;
+ }
+ li[class*="b"]{
+    background-color: grey;
+ }

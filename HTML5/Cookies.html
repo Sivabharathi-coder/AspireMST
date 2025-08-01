@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login with (Cookies)</title>
+</head>
+
+<body>
+
+    <h2>Login</h2>
+    <form onsubmit="saveUser(event)">
+        <label>Username:</label><br>
+        <input type="text" id="username"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" id="password"><br><br>
+
+        <input type="checkbox" id="rememberMe"> Remember Me<br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        //  Load saved username from cookie on page load
+        window.onload = function () {
+            const savedUsername = getCookie("username");
+            if (savedUsername) {
+                document.getElementById("username").value = savedUsername;
+                document.getElementById("rememberMe").checked = true;
+            }
+        };
+
+        function saveUser(event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const remember = document.getElementById("rememberMe").checked;
+
+            if (remember) {
+                setCookie("username", username, 7);
+                alert("Username saved in cookie ");
+            } else {
+                deleteCookie("username");
+                alert(" Cookie removed!");
+            }
+        }
+
+        function setCookie(name, value, days) {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            return document.cookie.split("; ").reduce((acc, current) => {
+                const [key, val] = current.split("=");
+                return key === name ? decodeURIComponent(val) : acc;
+            }, "");
+        }
+
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+        }
+
+    </script>
+
+</body>
+
+</html>

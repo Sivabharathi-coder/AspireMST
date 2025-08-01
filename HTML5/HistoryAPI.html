@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>History API </title>
+</head>
+
+<body>
+    <h2> History API Example</h2>
+
+    <button onclick="goToPage('home')">Home</button>
+    <button onclick="goToPage('about')">About</button>
+    <button onclick="goToPage('contact')">Contact</button>
+    <button onclick="goBack()">Back</button>
+
+    <div id="content" style="margin-top: 20px; font-size: 20px;"></div>
+
+    <script>
+        // Change page and add entry to browser history
+        function goToPage(page) {
+            history.pushState({ page: page }, `${page}`, `?page=${page}`);
+            renderPage(page);
+        }
+
+        // When user clicks browser back/forward button
+        window.onpopstate = function (event) {
+            const state = event.state;
+            if (state && state.page) {
+                renderPage(state.page);
+            } else {
+                renderPage('home'); 
+            }
+        };
+
+        // Simulate going back
+        function goBack() {
+            history.back();
+        }
+
+        // Update content based on page
+        function renderPage(page) {
+            document.getElementById("content").textContent = `You are on the "${page}" page`;
+        }
+
+        // Load correct page on first load
+        const params = new URLSearchParams(location.search);
+        const page = params.get("page") || "home";
+        renderPage(page);
+    </script>
+</body>
+
+</html>

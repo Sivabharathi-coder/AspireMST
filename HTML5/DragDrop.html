@@ -1,0 +1,54 @@
+<style>
+    #drag-box {
+        width: 150px;
+        height: 150px;
+        background: teal;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: grab;
+    }
+
+    #drop-zone {
+        width: 300px;
+        height: 200px;
+        border: 2px dashed #aaa;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+
+<div id="drag-box" draggable="true">Drag me</div>
+<div id="drop-zone">Drop here</div>
+
+<script>
+    const box = document.getElementById("drag-box");
+    const dropZone = document.getElementById("drop-zone");
+
+    box.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("text/plain", "drag-box");
+        box.style.opacity = 0.5;
+    });
+
+    box.addEventListener("dragend", () => {
+        box.style.opacity = 1;
+    });
+
+    dropZone.addEventListener("dragover", (e) => {
+        e.preventDefault(); // Required to allow dropping
+        dropZone.style.borderColor = "green";
+    });
+
+    dropZone.addEventListener("dragleave", () => {
+        dropZone.style.borderColor = "#aaa";
+    });
+
+    dropZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropZone.appendChild(box);
+        dropZone.style.borderColor = "#aaa";
+    });
+</script>

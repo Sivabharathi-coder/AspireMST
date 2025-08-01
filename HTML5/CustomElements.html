@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Elements</title>
+    <style> </style>
+</head>
+
+<body>
+    <user-card name="Siva Bharathi" email="siva@example.com"></user-card>
+
+    <script>
+        class UserCard extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {   
+                const name = this.getAttribute('name');
+                const email = this.getAttribute('email');
+
+                this.shadowRoot.innerHTML = `
+                <div class="card">
+                    <div class="name">${name}</div>
+                    <div class="email">${email}</div> 
+                    </div>
+                    `;
+            }
+
+        }
+        customElements.define("user-card", UserCard)
+    </script>
+
+</body>
+
+</html>

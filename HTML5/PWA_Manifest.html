@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>PWA Install Events Demo</title>
+</head>
+
+<body>
+    <h2>PWA Install Prompt Example</h2>
+    <button id="installBtn" hidden>Install App</button>
+    <p id="message"></p>
+
+    <script>
+        const installBtn = document.getElementById('installBtn');
+        const message = document.getElementById('message');
+        let deferredPrompt = null;
+
+        // 1. Listen for beforeinstallprompt to know PWA is installable
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();            // stop automatic browser prompt
+            deferredPrompt = e;            // save the event for later
+            installBtn.hidden = false;    // show our custom install button
+            message.textContent = 'You can install this PWA now';
+        });
+
+        // 2. When user clicks our install button
+        installBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();       // show browser install prompt
+            const choice = await deferredPrompt.userChoice;
+            message.textContent = choice.outcome === 'accepted'
+                ? 'User accepted install'
+                : 'User dismissed install';
+            installBtn.hidden = true;
+            deferredPrompt = null;
+        });
+
+        // 3. Listen for appinstalled event after installation completes
+        window.addEventListener('appinstalled', () => {
+            console.log('App installed successfully');
+            message.textContent = 'App has been installed!';
+        });
+    </script>
+</body>
+
+</html>
