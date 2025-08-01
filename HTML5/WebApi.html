@@ -1,0 +1,127 @@
+<!-- DOM API -->
+
+<div id="box">Hello DOM</div>
+<script>
+    const box = document.getElementById("box");
+    box.style.color = "blue";
+    box.textContent = "Updated with DOM API";
+</script>
+
+<!-- 2. FormData API -->
+
+<form id="myForm">
+    <input name="username" value="siva" />
+    <input name="age" value="25" />
+    <button type="submit">Send</button>
+</form>
+
+<script>
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = new FormData(this);
+        console.log(data.get("username"), data.get("age"));
+    });
+</script>
+
+<!-- Canvas API -->
+
+<canvas id="canvas" width="200" height="100" style="border:1px solid #000"></canvas>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "green";
+    ctx.fillRect(10, 10, 150, 75);
+</script>
+
+<!-- . Media API ( -->
+ 
+<video id="video" width="320" controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+</video>
+<button onclick="playVideo()">Play</button>
+
+<script>
+    function playVideo() {
+        document.getElementById("video").play();
+    }
+</script>
+
+
+<!-- Drag & Drop API -->
+<div id="dragme" draggable="true" style="width:100px;height:100px;background:red;"></div>
+<div id="dropzone" style="width:200px;height:200px;border:2px dashed #000;margin-top:10px;"></div>
+
+<script>
+    const dragme = document.getElementById("dragme");
+    const dropzone = document.getElementById("dropzone");
+
+    dragme.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("text/plain", "Dropped!");
+    });
+
+    dropzone.addEventListener("dragover", e => e.preventDefault());
+
+    dropzone.addEventListener("drop", e => {
+        e.preventDefault();
+        const msg = e.dataTransfer.getData("text/plain");
+        dropzone.textContent = msg;
+    });
+</script>
+
+
+<!-- Clipboard API -->
+
+<p id="copyText">Copied by Clipboard </p>
+<button onclick="copyFromElement()">Copy Text</button>
+
+<script>
+    function copyFromElement() {
+        const text = document.getElementById("copyText").innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Copied: " + text);
+        }).catch(err => {
+            console.error("Copy failed", err);
+        });
+    }
+</script>
+
+<!-- Copy Selected Text from the Page -->
+
+<p>Select any part of this sentence and then click copy.</p>
+<button onclick="copySelected()">Copy Selection</button>
+
+<script>
+    function copySelected() {
+        const selectedText = window.getSelection().toString();
+        navigator.clipboard.writeText(selectedText).then(() => {
+            alert("Copied: " + selectedText);
+        });
+    }
+</script>
+
+<!-- Copy from a <textarea> -->
+
+<textarea id="textArea">Hello</textarea>
+<button onclick="copyTextArea()">Copy</button>
+
+<script>
+    function copyTextArea() {
+        const textarea = document.getElementById("textArea");
+        textarea.select();
+        document.execCommand("copy"); // Fallback (still supported)
+        alert("Copied from textarea: " + textarea.value);
+    }
+</script>
+
+<!-- Notification API -->
+<button onclick="notifyMe()">Notify</button>
+
+<script>
+    function notifyMe() {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                new Notification("Hello from Notification API!");
+            }
+        });
+    }
+</script>

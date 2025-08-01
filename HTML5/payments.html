@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button id="pay">Pay Now</button>
+
+  <script>
+    document.getElementById("pay").addEventListener("click", async () => {
+      if (!window.PaymentRequest) {
+        alert("PaymentRequest API is not supported");
+        return;
+      }
+
+      // 1. Supported payment methods
+      const methods = [{
+        supportedMethods: "basic-card",
+        data: {
+          supportedNetworks: ["visa", "mastercard"]
+        }
+      }];
+
+      // 2. Payment details
+      const details = {
+        total: {
+          label: "Total",
+          amount: { currency: "USD", value: "10.00" }
+        }
+      };
+
+      // 3. Create and show payment dialog
+      const request = new PaymentRequest(methods, details);
+      try {
+        const response = await request.show();     // Opens payment UI
+        console.log("Payment info:", response);    // Logs name, card info, etc.
+
+        await response.complete("success");        // Close dialog
+        alert("Payment successful!");
+      } catch (err) {
+        console.error("Payment failed:", err);
+      }
+    });
+  </script>
+</body>
+</html>

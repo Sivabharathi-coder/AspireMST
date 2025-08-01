@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web Storage Example</title>
+</head>
+<body>
+  <h2>🧠 LocalStorage / SessionStorage Example</h2>
+
+  <label>Username: <input type="text" id="username" /></label><br><br>
+  <label>Password: <input type="password" id="password" /></label><br><br>
+
+  <button onclick="saveToLocal()">Save to localStorage</button>
+  <button onclick="saveToSession()">Save to sessionStorage</button>
+  <button onclick="clearStorage()">Clear</button>
+
+  <h3 id="output">Stored Data:</h3>
+
+  <script>
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const output = document.getElementById("output");
+
+    // Save to localStorage
+    function saveToLocal() {
+      localStorage.setItem("username", username.value);
+      localStorage.setItem("password", password.value);
+      showData();
+    }
+
+    // Save to sessionStorage
+    function saveToSession() {
+      sessionStorage.setItem("username", username.value);
+      sessionStorage.setItem("password", password.value);
+      showData();
+    }
+
+    // Display stored data
+    function showData() {
+      const localUser = localStorage.getItem("username") || "N/A";
+      const sessionUser = sessionStorage.getItem("username") || "N/A";
+      output.innerHTML = `
+        <strong>localStorage:</strong> ${localUser}<br>
+        <strong>sessionStorage:</strong> ${sessionUser}
+      `;
+    }
+
+    // Clear both storages
+    function clearStorage() {
+      localStorage.clear();
+      sessionStorage.clear();
+      showData();
+    }
+
+    // Listen for changes from other tabs (only for localStorage)
+    window.addEventListener("storage", function(e) {
+      alert(`🔄 Storage changed:\nKey: ${e.key}\nNew Value: ${e.newValue}`);
+      showData();
+    });
+
+    showData();
+  </script>
+</body>
+</html>
