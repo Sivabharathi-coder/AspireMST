@@ -1,0 +1,102 @@
+/* Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f2f4f8;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 1rem;
+}
+
+/* Card Design */
+.job-card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+/* Empty card */
+.job-card:empty {
+    border: 2px dotted #bbb ;
+    min-height: 140px ;
+    background-color: #fafafa;
+}
+
+/* Combinator Example */
+.job-card>p {
+    margin: 0.5rem 0;
+}
+
+/* Pseudo-element */
+h2::before {
+    content: "🧑‍💼 ";
+}
+
+h2::after {
+    content: " 📌";
+}
+
+/* Hover & Active Effects */
+.job-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-card:active {
+    transform: scale(0.98);
+}
+
+/* Focus input inside card */
+.job-card:focus-within {
+    border: 2px solid #3498db;
+}
+
+/* Advanced Selectors */
+
+/* Highlight jobs with a delete button */
+.job-card:has(.delete-btn) {
+    border: 2px solid red;
+}
+
+/* Style urgent or remote jobs */
+.job-card:is(.urgent, .remote) {
+    background-color: #fffbe6;
+    border-color: #f39c12;
+}
+
+/* Dim all cards not active */
+.job-card:not(.active) {
+    opacity: 0.9;
+}
+
+/* nth-child to style alternate cards */
+.job-card:nth-child(even) {
+    background-color: #f0f9ff;
+}
+
+/* Button styling */
+button {
+    margin-top: 0.5rem;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}

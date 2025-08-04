@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #f7f7f7;
+        }
+
+        form {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 1rem 0 0.3rem;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            margin-top: 1.5rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 style="text-align: center;">Job Application Form</h2>
+
+    <!-- Form starts -->
+    <form action="/submit-application" method="post" enctype="multipart/form-data" target="_blank" autocomplete="on"
+        novalidate name="jobApplicationForm">
+        <!-- Skips default browser validation -->
+
+        <!-- Full Name Input -->
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required /> <!-- Required field -->
+
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /> <!-- Must be valid email -->
+
+        <!-- File Upload -->
+        <label for="resume">Upload Resume:</label>
+        <input type="file" id="resume" name="resume" />
+
+        <!-- Select Dropdown -->
+        <label for="position">Position Applied For:</label>
+        <select id="position" name="position">
+            <option value="">Select a role</option>
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="uiux">UI/UX Designer</option>
+        </select>
+
+        <!-- Checkbox Group -->
+        <label>Skills:</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="skills" value="html" /> HTML</label>
+            <label><input type="checkbox" name="skills" value="css" /> CSS</label>
+            <label><input type="checkbox" name="skills" value="js" /> JavaScript</label>
+            <label><input type="checkbox" name="skills" value="react" /> React</label>
+        </div>
+
+        <!-- Radio Button Group -->
+        <label>Preferred Work Type:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="workType" value="onsite" /> Onsite</label>
+            <label><input type="radio" name="workType" value="remote" /> Remote</label>
+            <label><input type="radio" name="workType" value="hybrid" /> Hybrid</label>
+        </div>
+
+        <!-- Message Box -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us..."></textarea>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit Application</button> <!-- Sends data to server -->
+
+    </form>
+    <!-- Form ends -->
+
+</body>
+
+</html>

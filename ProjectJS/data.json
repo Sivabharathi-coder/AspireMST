@@ -1,0 +1,165 @@
+[
+    {
+        "jobId": "J20250801",
+        "title": "Senior React Developer",
+        "company": {
+            "name": "TechNova Pvt Ltd",
+            "location": "Bangalore, IN",
+            "industry": "Software Development"
+        },
+        "skillsRequired": [
+            "React",
+            "Redux",
+            "TypeScript",
+            "REST APIs",
+            "CI/CD"
+        ],
+        "salary": {
+            "min": 1200000,
+            "max": 1800000,
+            "currency": "INR"
+        },
+        "employmentType": "Full-time",
+        "postedOn": "2025-08-01T10:30:00Z",
+        "remoteAvailable": true,
+        "applications": [
+            {
+                "applicantId": "A101",
+                "name": "Ravi Kumar",
+                "appliedOn": "2025-08-01T12:45:00Z",
+                "status": "Under Review"
+            },
+            {
+                "applicantId": "A102",
+                "name": "Priya Sharma",
+                "appliedOn": "2025-08-01T13:10:00Z",
+                "status": "Interview Scheduled"
+            }
+        ]
+    },
+    {
+        "jobId": "J20250802",
+        "title": "UI/UX Designer",
+        "company": {
+            "name": "DesignX Studio",
+            "location": "Remote",
+            "industry": "Creative Design"
+        },
+        "skillsRequired": [
+            "Figma",
+            "Adobe XD",
+            "User Research",
+            "Prototyping"
+        ],
+        "salary": {
+            "min": 800000,
+            "max": 1200000,
+            "currency": "INR"
+        },
+        "employmentType": "Contract",
+        "postedOn": "2025-08-02T09:00:00Z",
+        "remoteAvailable": true,
+        "applications": [
+            {
+                "applicantId": "A103",
+                "name": "Anjali Mehra",
+                "appliedOn": "2025-08-01T15:00:00Z",
+                "status": "Interview Scheduled"
+            },
+            {
+                "applicantId": "A104",
+                "name": "Ravi Kumar",
+                "appliedOn": "2025-08-01T16:30:00Z",
+                "status": "Under Review"
+            }
+        ]
+    },
+    {
+        "jobId": "J20250803",
+        "title": "Backend Node.js Developer",
+        "company": {
+            "name": "CloudCore Systems",
+            "location": "Hyderabad, IN",
+            "industry": "Cloud Computing"
+        },
+        "skillsRequired": [
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Docker",
+            "Microservices"
+        ],
+        "salary": {
+            "min": 1000000,
+            "max": 1600000,
+            "currency": "INR"
+        },
+        "employmentType": "Full-time",
+        "postedOn": "2025-08-01T11:15:00Z",
+        "remoteAvailable": false,
+        "applications": [
+            {
+                "applicantId": "A105",
+                "name": "Suresh Babu",
+                "appliedOn": "2025-08-01T17:00:00Z",
+                "status": "Shortlisted"
+            }
+        ]
+    },
+    {
+        "jobId": "J20250804",
+        "title": "DevOps Engineer",
+        "company": {
+            "name": "InfraNext Solutions",
+            "location": "Pune, IN",
+            "industry": "Infrastructure"
+        },
+        "skillsRequired": [
+            "AWS",
+            "Terraform",
+            "Jenkins",
+            "Kubernetes",
+            "Monitoring Tools"
+        ],
+        "salary": {
+            "min": 1300000,
+            "max": 2000000,
+            "currency": "INR"
+        },
+        "employmentType": "Full-time",
+        "postedOn": "2025-08-01T14:45:00Z",
+        "remoteAvailable": true,
+        "applications": []
+    },
+    {
+        "jobId": "J20250805",
+        "title": "Frontend Intern",
+        "company": {
+            "name": "WebStart India",
+            "location": "Chennai, IN",
+            "industry": "Web Development"
+        },
+        "skillsRequired": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React"
+        ],
+        "salary": {
+            "min": 10000,
+            "max": 15000,
+            "currency": "INR"
+        },
+        "employmentType": "Internship",
+        "postedOn": "2025-08-01T08:00:00Z",
+        "remoteAvailable": false,
+        "applications": [
+            {
+                "applicantId": "A106",
+                "name": "Meena Raj",
+                "appliedOn": "2025-08-01T09:30:00Z",
+                "status": "Under Review"
+            }
+        ]
+    }
+]
