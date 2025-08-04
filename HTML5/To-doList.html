@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul.task-list {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul.task-list li {
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #e9f5ff;
+            border-radius: 5px;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        ul.task-list li:hover {
+            background: #d0ebff;
+        }
+
+        ul.task-list li:first-child {
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        ul.task-list li:nth-child(even) {
+            background: #f0f0f0;
+        }
+
+        ul.task-list li.completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>📋 My Task List</h2>
+
+    <ul class="task-list" id="tasks">
+        <li>📌 High Priority Task</li>
+        <li>Check emails</li>
+        <li>Update project status</li>
+        <li>Attend stand-up meeting</li>
+        <li>Code review</li>
+    </ul>
+
+    <script>
+        // Add 'completed' class on click
+        const tasks = document.querySelectorAll("#tasks li");
+        tasks.forEach(task => {
+            task.addEventListener("click", () => {
+                task.classList.toggle("completed");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -39,32 +39,111 @@ ul>li:first-child {
 }
 
 ul>li *:first-child {
-  font-weight: bold;
+    font-weight: bold;
 }
 
- input[type="text"]{
+input[type="text"] {
     color: green;
- }
+}
 
- li[class]{
+li[class] {
     font-size: larger;
- }
+}
 
- li[class="a"]{
+li[class="a"] {
     color: red;
- }
- 
- li[class~="a"]{
+}
+
+li[class~="a"] {
     background-color: green;
- }
+}
 
- li[class^="b"]{
+li[class^="b"] {
     background-color: blueviolet;
- }
+}
 
- li[class$="b"]{
+li[class$="b"] {
     color: orange;
- }
- li[class*="b"]{
+}
+
+li[class*="b"] {
     background-color: grey;
- }
+}
+
+
+a:link,
+a:visited {
+    color: rebeccapurple;
+    font-weight: bold;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+/* article p::first-line{
+color: red;
+} */
+
+article p:first-child::first-line {
+    color: red;
+}
+
+article p:first-line {
+    background-color: #2aad8a;
+}
+
+div:hover {
+    background-color: #2aad8a;
+}
+
+div:focus {
+    display: hidden;
+}
+
+p:first-child {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+p:last-child {
+    background-color: darkcyan;
+}
+
+p:nth-child(4) {
+    font-size: larger;
+}
+
+p::before {
+    content: "🌟 ";
+    color: gold;
+}
+
+p::after {
+    content: " 🔚";
+    color: green;
+}
+
+p::first-letter {
+    font-size: 2em;
+    color: red;
+}
+
+input::placeholder {
+    color: darkgray;
+}
+
+.btn:hover {
+    background-color: orange;
+}
+
+.alert::before {
+    content: "⚠️ ";
+    color: red;
+}
+
+#title::first-letter {
+    font-size: 2em;
+}
+article>p::first-line {
+    font-size: 2em;
+}
