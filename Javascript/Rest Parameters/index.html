@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest Params </title>
+</head>
+
+<body>
+
+    <script>
+        function createBill(customerName, ...items) {
+
+            total = 0;
+            items.forEach((item, index) => {
+                const [itemName, itemPrice] = item;
+                console.log("userName", itemName);
+                console.log("Price", itemPrice);
+                total += itemPrice;
+
+
+            })
+            console.log("---------------------------");
+            console.log(`Total Amount: ₹${total}`);
+        }
+
+
+
+        createBill(
+            "siva",
+            ["Ram", 250],
+            ["Suriya", 50],
+            ["Jai", 230],
+            ["Sasi", 150],
+
+        )
+    </script>
+</body>
+
+</html>
