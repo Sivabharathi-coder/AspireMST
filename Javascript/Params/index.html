@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart </title>
+</head>
+<body>
+\  
+  <label>Enter Your Name:</label>
+  <input type="text" id="username" placeholder="Your name" />
+  <br><br>
+
+  <label>Item Prices :</label>
+  <input type="text" id="prices" />
+  <br><br>
+
+  <button onclick="showTotal()">Calculate Total</button>
+
+  <h3 id="output"></h3>
+
+  <script>
+    // Function using REST to gather prices
+    function calculateTotal(name, ...prices) {
+      const total = prices.reduce((sum, item) => sum + item, 0);
+      return `Hi ${name}, your total is ₹${total}`;
+    }
+
+    function showTotal() {
+      const name = document.getElementById('username').value;
+      const priceStr = document.getElementById('prices').value;
+
+      // Convert string to number array
+      const priceArr = priceStr.split(",").map(p => Number(p.trim()));
+
+      console.log(priceArr)
+      // Spread the array when calling the function
+      const message = calculateTotal(name, ...priceArr);
+
+      document.getElementById("output").textContent = message;
+    }
+  </script>
+</body>
+</html>

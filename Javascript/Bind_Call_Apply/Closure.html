@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Attempt </title>
+</head>
+
+<body>
+  <h2>Login Page</h2>
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" /><br><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" /><br><br>
+
+  <button id="login-btn">Login</button>
+
+  <p id="message"></p>
+
+  <script>
+    // Closure function to limit login attempts
+    function loginLimiter(maxAttempts) {
+      let attempts = 0;
+
+      return function () {
+        attempts++;
+
+        if (attempts > maxAttempts) {
+          document.getElementById("message").innerText =
+            "Too many login attempts. Please try again later.";
+        } else {
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+        
+          if (username === "admin" && password === "1234") {
+            document.getElementById("message").innerText =
+              ` Welcome, ${username}! Login successful.`;
+          } else {
+            document.getElementById("message").innerText =
+              ` Login failed. Attempt ${attempts} of ${maxAttempts}`;
+          }
+        }
+      };
+    }
+
+    // Allow only 3 login attempts
+    const handleLogin = loginLimiter(3);
+
+    // Add event listener to login button
+    document.getElementById("login-btn").addEventListener("click", handleLogin);
+  </script>
+</body>
+
+</html>

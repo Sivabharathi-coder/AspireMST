@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .card {
+            border: 1px solid #aaa;
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+        }
+
+        img {
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="heading">Welcome</h2>
+
+    <div class="card">
+        <p>Name: Alice</p>
+        <p>Role: Developer</p>
+    </div>
+    <div class="card">
+        <p>Name: Bob</p>
+        <p>Role: Designer</p>
+    </div>
+
+    <p>Note: You have 2 pending tasks.</p>
+    <p>Check the logs for more details.</p>
+
+    <form name="loginForm">
+        <input type="text" name="username" placeholder="Enter Username">
+    </form>
+
+    <a href="https://example.com">Company Site</a>
+    <a>Broken Link (No href)</a>
+
+    <img src="https://via.placeholder.com/100" alt="Profile Pic">
+
+    <script>
+        // 1. Header - greeting
+        const heading = document.getElementById("heading");
+        heading.style.color = "blue";
+        console.log(heading.textContent);
+
+        // 2. Profile cards - access by class
+        const cards = document.getElementsByClassName("card");
+        console.log(cards.length);
+
+        // 3. Count all <p> tags on page
+        const paragraphs = document.getElementsByTagName("p");
+        console.log("Paragraph count:", paragraphs.length);
+
+        // 4. First profile card
+        const firstCard = document.querySelector(".card");
+        firstCard.style.backgroundColor = "#eef";
+        console.log("First user card updated");
+
+        // 5. Loop through all cards
+        const allCards = document.querySelectorAll(".card");
+        allCards.forEach((card, index) => {
+            console.log(`User[${index + 1}] Info:`, card.textContent.trim());
+        });
+
+        // 6. Get input from form
+        const form = document.forms.loginForm;
+        const input = form.querySelector("input");
+        input.value = "admin123";
+        console.log("Login field pre-filled with:", input.value);
+
+        // 7. Forms count
+        console.log("Total forms on page:", document.forms.length);
+
+        // 8. Count valid links only (with href)
+        console.log("Valid links on page:", document.links.length);
+
+        // 9. Images
+        console.log("Profile images found:", document.images.length);
+
+        // 10. Shadow DOM component - e.g., notification box
+        class NotificationBox extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                shadow.innerHTML = `
+                    <style>
+                        .note { color: green; font-weight: bold; }
+                        button { padding: 5px 10px; margin-top: 5px; }
+                    </style>
+                    <div class="note">🔔 New Notification!</div>
+                    <button>Dismiss</button>
+                `;
+            }
+        }
+        customElements.define("notification-box", NotificationBox);
+
+        // Add component to page
+        const notify = document.createElement("notification-box");
+        document.body.appendChild(notify);
+
+        // Access inside shadow DOM
+        setTimeout(() => {
+            const button = notify.shadowRoot.querySelector("button");
+            button.addEventListener("click", () => {
+                notify.remove();
+                console.log("Notification dismissed.");
+            });
+            console.log("Shadow DOM Notification ready.");
+        }, 100);
+    </script>
+</body>
+
+</html>

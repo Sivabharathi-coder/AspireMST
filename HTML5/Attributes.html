@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attributes</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th,
+        td {
+            border: 1px solid #444;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+    </header>
+    <section>
+        <form action="/index.html" method="post" autocomplete="off" enctype="multipart/form-data">
+            <label for="name" title="name" class="name" id="Username" hidden tabindex="1"
+                data-user-id="1">Username</label>
+            <input type="text" placeholder="Username" name="name" pattern="\d{3}" />
+            <label for="pass">Password</label>
+            <input type="pass" placeholder="Password" name="pass" value="12345678" required readonly />
+            <button type="submit" disabled>Submit</button>
+            <p contenteditable="true">Edit me</p>
+            <p draggable="true">Paragrapgh</p>
+            <a href="" target="_blank" rel="noopener noreferrer">Google</a>
+            <a href="" target="_parent">Google</a>
+            <a href="" target="_self">Google</a>
+            <a href="" target="_top">Google</a>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2" scope="row">Names</th>
+                    <th rowspan="2" scope="col">Scores</th>
+                    <th rowspan="2" scope="col">Total</th>
+                </tr>
+                <tr>
+                    <th scope="col">Math</th>
+                    <th scope="col">Science</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice</td>
+                    <td>32</td>
+                    <td>44</td>
+                    <td>44</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <h2>Class Timetable</h2>
+
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Period</th>
+            <th>Subject</th>
+        </tr>
+
+        <tr>
+            <td rowspan="2">Monday</td>
+            <td>1st</td>
+            <td>Math</td>
+        </tr>
+        <tr>
+            <!-- no Day cell here, because it's merged using rowspan -->
+            <td>2nd</td>
+            <td>Science</td>
+        </tr>
+
+        <tr>
+            <td rowspan="3">Tuesday</td>
+            <td>1st</td>
+            <td>English</td>
+        </tr>
+        <tr>
+            <td>2nd</td>
+            <td>Physics</td>
+        </tr>
+        <tr>
+            <td>3rd</td>
+            <td>History</td>
+        </tr>
+    </table>
+    <footer>
+
+    </footer>
+</body>
+
+</html>

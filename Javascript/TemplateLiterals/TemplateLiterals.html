@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Template Literal </title>
+</head>
+
+<body>
+  <div id="output"></div>
+
+  <script>
+    const userName = "Siva";
+    const job = "Frontend Developer";
+    const experience = 2.3;
+    const skills = ["HTML", "CSS", "JavaScript", "React"];
+
+    //  interpolation
+    const message = `Hi, I'm ${userName}, working as a ${job}.`;
+    console.log("Basic interpolation:", message);
+
+    // Multiline string
+    const multiline = `This is a multiline string. 
+     It keeps its line breaks and spaces.</br>
+     No need for \\n manually.`;
+    console.log("Multiline string:", multiline);
+
+    // Expression inside template literal
+    const nextLevel = `${userName} will complete ${experience + 0.7} years soon.`;
+    console.log("Expression example:", nextLevel);
+
+    // Array display using template literal
+    const skillList = `
+    <ul>
+      ${skills.map(skill => `<li>${skill}</li>`).join("")}
+    </ul>
+    `;
+    console.log("Skill list as HTML:", skillList);
+
+    // Render to the DOM
+    document.getElementById("output").innerHTML = `
+      <p>${message}</p>
+      <p>${nextLevel}</p>
+      <p>${multiline}</p>
+      <h3>Skills:</h3>
+      <p>${nextLevel}<p>
+      ${skillList}
+    `;
+  </script>
+</body>
+
+</html>

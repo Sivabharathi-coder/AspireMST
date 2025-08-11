@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Live Updates with EventSource</title>
+</head>
+
+<body>
+    <h2>Live Message Feed</h2>
+    <div id="messages"></div>
+    
+    <script>
+        const output = document.getElementById("messages");
+
+        const source = new EventSource("http://localhost:3000/events");
+
+        source.onmessage = (event) => {
+            const msg = document.createElement("p");
+            msg.textContent = "Message: " + event.data;
+            output.appendChild(msg);
+        };
+
+        source.onerror = (event) => {
+            const err = document.createElement("p");
+            err.style.color = "red";
+            err.textContent = "Error receiving updates.";
+            output.appendChild(err);
+        };
+    </script>
+</body>
+
+</html>
