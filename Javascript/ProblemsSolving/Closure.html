@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Attempt </title>
+</head>
+
+<body>
+    <input type="password" id="password" placeholder="Enter password">
+    <button id="loginBtn">Login</button>
+    <p id="message"></p>
+
+    <script>
+        function createLoginLimiter(max) {
+            let attempts = 0;
+
+            return function () {
+                const input = document.getElementById("password").value;
+                const msg = document.getElementById("message");
+
+                if (input === "admin123") {
+                    msg.innerText = "Login successful!";
+                    attempts = 0;
+                } else {
+                    attempts++;
+                    msg.innerText = "Incorrect password.";
+                    if (attempts >= max) {
+                        document.getElementById("loginBtn").disabled = true;
+                        msg.innerText = "Too many failed attempts.";
+                    }
+                }
+            };
+        }
+
+        const handleLogin = createLoginLimiter(3);
+        document.getElementById("loginBtn").addEventListener("click", handleLogin);
+    </script>
+</body>
+
+</html>

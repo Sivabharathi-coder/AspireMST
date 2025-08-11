@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript</title>
+</head>
+<body>
+  <h1>JavaScript Math Operations</h1>
+  <pre id="output"></pre>
+
+  <script>
+    // Targeting <pre> element to display output
+    const output = document.getElementById("output");
+
+    // Helper function to print
+    function print(text) {
+      output.textContent += text + "\n";
+    }
+
+    // Addition: Combines two values using the + operator
+    let sum = 10 + 5;
+    print("Addition (10 + 5): " + sum); // 15
+
+    // Subtraction: Subtracts right-hand value from left-hand value
+    let difference = 10 - 5;
+    print("Subtraction (10 - 5): " + difference); // 5
+
+    // Multiplication: Multiplies both values
+    let product = 10 * 5;
+    print("Multiplication (10 * 5): " + product); // 50
+
+    // Division: Divides left value by right value
+    let quotient = 10 / 2;
+    print("Division (10 / 2): " + quotient); // 5
+
+    // Modulus: Remainder of division
+    let remainder = 10 % 3;
+    print("Modulus (10 % 3): " + remainder); // 1
+
+    // Exponentiation: Raises to power
+    let power = 2 ** 3;
+    print("Exponentiation (2 ** 3): " + power); // 8
+
+    // Increment: Adds 1
+    let x = 5;
+    x++;
+    print("Increment (x = 5; x++): " + x); // 6
+
+    // Decrement: Subtracts 1
+    let y = 5;
+    y--;
+    print("Decrement (y = 5; y--): " + y); // 4
+
+    // Unary Negation: Makes positive value negative
+    let positive = 10;
+    let negative = -positive;
+    print("Unary Negation (-10): " + negative); // -10
+
+    // Combined operation with BODMAS
+    let result = (5 + 3) * 2 - 4 / 2;
+    // (5 + 3) = 8 → 8 * 2 = 16 → 4 / 2 = 2 → 16 - 2 = 14
+    print("Combined: (5 + 3) * 2 - 4 / 2 = " + result); // 14
+
+    // Floating-point division
+    let floatResult = 7 / 2;
+    print("Floating Division (7 / 2): " + floatResult); // 3.5
+
+    // Math.round(): Rounds to nearest integer
+    let rounded = Math.round(4.6);
+    print("Math.round(4.6): " + rounded); // 5
+
+    // Math.floor(): Rounds down
+    let floorVal = Math.floor(4.9);
+    print("Math.floor(4.9): " + floorVal); // 4
+
+    // Math.ceil(): Rounds up
+    let ceilVal = Math.ceil(4.1);
+    print("Math.ceil(4.1): " + ceilVal); // 5
+
+    // Math.sqrt(): Square root
+    let sqrtVal = Math.sqrt(16);
+    print("Math.sqrt(16): " + sqrtVal); // 4
+
+    // Math.abs(): Absolute value
+    let absVal = Math.abs(-7);
+    print("Math.abs(-7): " + absVal); // 7
+  </script>
+</body>
+</html>

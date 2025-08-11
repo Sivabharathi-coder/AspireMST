@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Methods UI Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin: 20px;
+        }
+
+        h2 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .userData {
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            font-size: 12px;
+        }
+
+        .item_header {
+            cursor: pointer;
+            background-color: #eee;
+            padding: 6px;
+            margin-top: 4px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .item_header.active {
+            background-color: #ccc;
+        }
+
+        .item_content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            font-size: 12px;
+            padding: 2px 4px;
+        }
+
+        .errorMessage,
+        .errorMessage2 {
+            color: red;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        #promiseall,
+        #promiseallsetteled,
+        #promiseany,
+        #promiserace {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Promise.all Output</h2>
+    <div id="promiseall"></div>
+    <p class="errorMessage"></p>
+
+    <h2>Promise.allSettled Output</h2>
+    <div id="promiseallsetteled"></div>
+    <p class="errorMessage2"></p>
+
+    <h2>Promise.any Output</h2>
+    <div id="promiseany"></div>
+
+    <h2>Promise.race Output</h2>
+    <div id="promiserace"></div>
+
+    <script src="promiseMethods.js"></script>
+    <script src="promiseSample.js"></script>
+</body>
+
+</html>

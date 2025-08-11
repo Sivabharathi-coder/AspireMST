@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>JavaScript RegExp</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+    pre { background: #fff; padding: 10px; border-left: 5px solid #2196f3; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    function log(title, result) {
+      output.innerHTML += `<pre><strong>${title}:</strong>\n${JSON.stringify(result, null, 2)}</pre>`;
+    }
+
+    // 1. Creating RegExp
+    const regex1 = /hello/i; // literal syntax (i = case-insensitive)
+    const regex2 = new RegExp("world", "g"); // constructor syntax (g = global)
+
+    // 2. test(): checks if pattern exists (returns true/false)
+    log("RegExp.test()", regex1.test("Hello there")); // true
+
+    // 3. exec(): returns match details or null
+    log("RegExp.exec()", regex1.exec("Hello there")); // match object
+
+    // 4. match(): similar to exec but called on string
+    const text = "The rain in SPAIN stays mainly in the plain";
+    log("String.match()", text.match(/ain/gi)); // ['ain', 'AIN', 'ain', 'ain']
+
+ 
+    // 6. replace(): replaces matched text
+    const replaced = text.replace(/ain/g, "🌧️");
+    log("String.replace()", replaced); // The r🌧️ in SPAIN stays m🌧️ly in the pl🌧️
+
+    // 7. search(): returns index of first match or -1
+    log("String.search()", text.search(/spain/i)); // index of "SPAIN"
+
+    // 8. split(): splits a string using regex
+    const csv = "name,age,location";
+    log("String.split()", csv.split(/,/)); // ["name", "age", "location"]
+
+    // 10. Anchors: ^ (start), $ (end)
+    log("Anchors (^ and $)", /^The/.test(text)); // true
+
+    // 11. Character sets: [aeiou]
+    log("Character set", text.match(/[aeiou]/gi)); // all vowels
+
+    // 12. Ranges: [a-z]
+    log("Character range", text.match(/[a-z]/g)); // all lowercase letters
+
+    // 13. Quantifiers: +, *, ?, {n}
+    const quantity = "ha haaa haaaa";
+    log("Quantifier +", quantity.match(/ha+/g)); // ["ha", "haaa", "haaaa"]
+
+
+
+    // 15. Lookahead and Lookbehind
+    const password = "pass123word";
+    // Positive lookahead: match numbers only if followed by "word"
+    log("Lookahead", password.match(/\d+(?=word)/)); // ["123"]
+    // Positive lookbehind: match "123" only if preceded by "pass"
+    log("Lookbehind", password.match(/(?<=pass)\d+/)); // ["123"]
+  </script>
+</body>
+</html>

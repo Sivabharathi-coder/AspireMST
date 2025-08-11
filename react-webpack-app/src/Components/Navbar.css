@@ -1,0 +1,54 @@
+.navbar>li {
+    list-style: none;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    gap: 20px;
+    background-color: grey;
+
+}
+
+.userInfo {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    color: white;
+    text-transform: uppercase
+}
+
+.userInfo>.avatar {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: black;
+
+}
+
+.DropdownMenu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 5px 0;
+    width: 120px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.DropdownMenu li {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: black;
+}
+
+.DropdownMenu li:hover {
+    background-color: #f0f0f0;
+}

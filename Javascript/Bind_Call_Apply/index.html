@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display User Info - apply()</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>User Info Using apply()</h2>
+
+    <button onclick="showUser(user1, ['Salem', 24])">Show Anu</button>
+    <button onclick="showUser(user2, ['Chennai', 30])">Show Karan</button>
+    <button onclick="showUser(user3, ['Coimbatore', 28])">Show Meera</button>
+
+    <p id="outputApply">Click a button to see user details.</p>
+
+
+    <hr>
+    <h2>Welcome Members Using bind()</h2>
+
+    <button onclick="greetArun()">Greet Arun</button>
+    <button onclick="greetDivya()">Greet Divya</button>
+    <button onclick="greetJohn()">Greet John</button>
+
+    <p id="outputBind">Click a button to greet a member.</p>
+
+
+    <hr>
+    <h2>Using call() to Introduce Person</h2>
+    <button onclick="showIntroduction()">Introduce Kavin</button>
+    <p id="outputCall">Click the button to see the introduction.</p>
+
+    <script src="Call.js"></script>
+    <script src="Bind.js"></script>
+    <script src="Apply.js"></script>
+</body>
+
+</html>

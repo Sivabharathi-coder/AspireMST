@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prototype</title>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+    // Add a method to all objects using Object.prototype
+    Object.prototype.printDetails = function () {
+      let result = "";
+      for (let key in this) {
+        if (this.hasOwnProperty(key)) {
+          result += `${key}: ${this[key]}<br>`;
+        }
+      }
+      return result;
+    };
+
+    // Employee object
+    const employee = {
+      name: "Siva",
+      role: "MERN Stack Developer",
+      experience: "2.5 years",
+      location: "Chennai"
+    };
+
+    // Display in HTML
+    document.getElementById("output").innerHTML = employee.printDetails();
+  </script>
+</body>
+</html>
+
+
+
+
+<!-- "without protoype " -->
+
+
+<!-- const emp1 = {
+  name: "Siva",
+  role: "Dev",
+  printDetails() {
+    return `${this.name} - ${this.role}`;
+  }
+};
+
+const emp2 = {
+  name: "Priya",
+  role: "Tester",
+  printDetails() {
+    return `${this.name} - ${this.role}`;
+  }
+}; -->

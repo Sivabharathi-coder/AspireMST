@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Job Saver</title>
+</head>
+
+<body>
+    <h2>Available Jobs</h2>
+    <div id="job-list"></div>
+
+    <h3>Saved Jobs</h3>
+    <ul id="saved-jobs"></ul>
+
+    <script>
+        // 1. Open DB
+        const request = indexedDB.open("JobPortalDB", 1);
+
+        request.onupgradeneeded = function (event) {
+            const db = event.target.result;
+            db.createObjectStore("savedJobs", { keyPath: "id" });
+            console.log("DB setup complete");
+        };
+
+        request.onsuccess = function (event) {
+            const db = event.target.result;
+            console.log("DB opened");
+
+            // Simulated job list
+            const jobs = [
+                { id: 101, title: "Frontend Developer", company: "Google" },
+                { id: 102, title: "Backend Developer", company: "Amazon" },
+                { id: 103, title: "Fullstack Engineer", company: "Netflix" }
+            ];
+
+            // Render job cards
+            const jobList = document.getElementById("job-list");
+            jobs.forEach(job => {
+                const div = document.createElement("div");
+                div.innerHTML = `
+          <p><strong>${job.title}</strong> at ${job.company}</p>
+          <button onclick='saveJob(${JSON.stringify(job)})'>Save</button>
+        `;
+                jobList.appendChild(div);
+            });
+
+            // Save job to IndexedDB
+            // Declares saveJob globally so the button can access it.
+
+
+            window.saveJob = function (job) {
+                const tx = db.transaction("savedJobs", "readwrite");
+                // Opens a read-write transaction on the "savedJobs" store.
+
+
+                const store = tx.objectStore("savedJobs");
+                // Gets access to the "savedJobs" object store.
+
+
+
+                const addReq = store.add(job);
+                // Tries to add the job object. If id is already used, it will fail.
+                addReq.onsuccess = () => {
+                    alert(`Saved: ${job.title}`);
+                    showSavedJobs();
+                };
+
+                addReq.onerror = () => {
+                    alert("Job already saved or error occurred.");
+                };
+            };
+
+            // Display saved jobs
+            function showSavedJobs() {
+                const savedJobsList = document.getElementById("saved-jobs");
+                savedJobsList.innerHTML = "";
+
+                const tx = db.transaction("savedJobs", "readonly");
+                const store = tx.objectStore("savedJobs");
+                const req = store.openCursor();
+
+                req.onsuccess = function (e) {
+                    const cursor = e.target.result;
+                    if (cursor) {
+                        const li = document.createElement("li");
+                        li.textContent = `${cursor.value.title} at ${cursor.value.company}`;
+                        savedJobsList.appendChild(li);
+                        cursor.continue();
+                    }
+                };
+            }
+
+            // Load saved jobs on start
+            showSavedJobs();
+        };
+    </script>
+</body>
+
+</html>
