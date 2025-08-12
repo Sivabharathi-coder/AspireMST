@@ -1,54 +1,132 @@
-.navbar>li {
-    list-style: none;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #007bff, #00b4d8);
+    padding: 0px 20px;
     color: white;
+    position: relative;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
     cursor: pointer;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 50px;
-    gap: 20px;
-    background-color: grey;
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    list-style: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li {
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.nav-links li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-links .active {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .userInfo {
-    list-style: none;
     display: flex;
-    gap: 10px;
-    color: white;
-    text-transform: uppercase
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
 }
 
-.userInfo>.avatar {
-    height: 20px;
-    width: 20px;
+.avatar {
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    text-align: center;
-    background-color: black;
+    background: white;
+    color: #007bff;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.user-email {
+    text-transform: lowercase;
+    font-size: 14px;
 }
 
 .DropdownMenu {
     position: absolute;
-    top: 40px;
+    top: 45px;
     right: 0;
     background: white;
-    border: 1px solid #ccc;
-    list-style: none;
+    border-radius: 6px;
     padding: 5px 0;
-    width: 120px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    width: 150px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.2s ease;
 }
 
 .DropdownMenu li {
-    padding: 8px 12px;
+    padding: 10px;
     cursor: pointer;
-    color: black;
+    font-size: 14px;
+    color: #333;
 }
 
 .DropdownMenu li:hover {
     background-color: #f0f0f0;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: linear-gradient(90deg, #007bff, #00b4d8);
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

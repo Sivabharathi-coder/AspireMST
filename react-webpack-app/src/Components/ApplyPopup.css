@@ -1,0 +1,71 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup.big-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup.big-form h2 {
+    margin-bottom: 15px;
+}
+
+.popup.big-form input,
+.popup.big-form textarea,
+.popup.big-form select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.popup-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-buttons button:first-child {
+    background: #28a745;
+    color: white;
+}
+
+.popup-buttons .cancel-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: -5px;
+}
+
+.declaration {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}

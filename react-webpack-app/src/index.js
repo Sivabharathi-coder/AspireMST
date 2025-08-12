@@ -7,6 +7,8 @@ import WindowTracker from "./Component/WindowTracker";
 import JobList from "./Component/JobList";
 import ForgotPassword from "./Components/ForgotPassword";
 import Navbar from "./Components/Navbar";
+import ProfilePage from "./Components/ProfilePage";
+import PropertyCard from "./HomeComponents/PropertyCard/PropertyCard";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -20,6 +22,9 @@ root.render(
             <Route path="/WindowTracker" element={<WindowTracker />} />
             <Route path="/JobList" element={<JobList />} />
             <Route path="/forgotPassword" element={<ForgotPassword />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/propertyCard" element={<PropertyCard />} />
+
         </Routes>
     </BrowserRouter>
 );

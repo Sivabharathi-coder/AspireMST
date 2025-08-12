@@ -1,42 +1,99 @@
-import React, { useEffect, useState } from "react";
-import users from "../users.json";
-import { Link } from "react-router-dom";
-import JobList from "../Component/JobList";
-import Button from "../Component/Button";
-import Profile from "../Component/Image";
-import LoggedIn from "../Component/ConditionalRender";
+import React, { useState, useEffect } from "react";
+import jobsData from "../jobs.json";
 import Navbar from "./Navbar";
+import ApplyPopup from "./ApplyPopup"; 
+import "./Dashboard.css";
+import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
+
 const Dashboard = () => {
-    const [user, setUser] = useState(null);
+    const [jobs, setJobs] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [locationFilter, setLocationFilter] = useState("");
+    const [filteredJobs, setFilteredJobs] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
+    const [selectedJob, setSelectedJob] = useState(null);
 
     useEffect(() => {
-        const userId = localStorage.getItem("userId");
-        if (userId) {
-            const matchedUser = users.find((u) => u.id === parseInt(userId));
-            setUser(matchedUser);
-        }
+        setJobs(jobsData);
+        setFilteredJobs(jobsData);
     }, []);
 
-    return (
-        <div >
-            {/* {user ? (
-                <>
-                    <h2>Hi {user.fullname} </h2>
-                    <p>Role: {user.role}</p>
-                </>
-            ) : (
-                <h2>No user found. Please log in again.</h2>
-            )}
-            <Link to="/WindowTracker">
-                <button>Go to Window Tracker</button>
-            </Link> */}
-            <Navbar />
-            <JobList />
-            <Button />
-            <Profile />
-            <LoggedIn />
-        </div>
+    useEffect(() => {
+        let updatedJobs = jobs;
 
+        if (searchTerm.trim()) {
+            updatedJobs = updatedJobs.filter(job =>
+                job.title.toLowerCase().includes(searchTerm.toLowerCase())
+            );
+        }
+
+        if (locationFilter.trim()) {
+            updatedJobs = updatedJobs.filter(job =>
+                job.location.toLowerCase().includes(locationFilter.toLowerCase())
+            );
+        }
+
+        setFilteredJobs(updatedJobs);
+    }, [searchTerm, locationFilter, jobs]);
+
+    const handleApplyClick = (job) => {
+        setSelectedJob(job);
+        setShowPopup(true);
+    };
+
+    return (
+        <div className="dashboard">
+            <Navbar />
+            <h1 className="dashboard-title">💼 Job Dashboard</h1>
+
+            {/* Filters */}
+            <div className="filters">
+                <div className="filter-input">
+                    <FaSearch className="filter-icon" />
+                    <input
+                        type="text"
+                        placeholder="Search by job title..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+
+                <div className="filter-input">
+                    <FaMapMarkerAlt className="filter-icon" />
+                    <input
+                        type="text"
+                        placeholder="Filter by location..."
+                        value={locationFilter}
+                        onChange={(e) => setLocationFilter(e.target.value)}
+                    />
+                </div>
+            </div>
+
+            {/* Job Listing */}
+            <div className="job-list">
+                {filteredJobs.length > 0 ? (
+                    filteredJobs.map((job) => (
+                        <div className="job-card" key={job.id}>
+                            <h3>{job.title}</h3>
+                            <p><strong>🏢 Company:</strong> {job.company}</p>
+                            <p><strong>📍 Location:</strong> {job.location}</p>
+                            <p><strong>💰 Salary:</strong> {job.salary}</p>
+                            <button onClick={() => handleApplyClick(job)}>Apply Now</button>
+                        </div>
+                    ))
+                ) : (
+                    <p className="no-results">No jobs found matching your criteria.</p>
+                )}
+            </div>
+
+            {/* Popup Component */}
+            {showPopup && (
+                <ApplyPopup
+                    job={selectedJob}
+                    onClose={() => setShowPopup(false)}
+                />
+            )}
+        </div>
     );
 };
 

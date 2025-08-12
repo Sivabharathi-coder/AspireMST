@@ -1,0 +1,96 @@
+.dashboard {
+    /* padding: 0px; */
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f0f4ff, #e0f7fa);
+    min-height: 100vh;
+}
+
+.dashboard-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-input {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-icon {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.filter-input input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+}
+
+.job-card {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.job-card h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.job-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+.job-card button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, #007bff, #00b4d8);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.job-card button:hover {
+    background: linear-gradient(90deg, #0056b3, #0096c7);
+}
+
+.no-results {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    grid-column: span 2;
+}

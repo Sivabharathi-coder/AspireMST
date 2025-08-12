@@ -4,20 +4,20 @@
         "email": "john@example.com",
         "password": "123456",
         "fullname": "John Doe",
-        "role": "Admin"
+        "role": "job"
     },
     {
         "id": 2,
         "email": "jane@example.com",
         "password": "password123",
         "fullname": "Jane Smith",
-        "role": "Editor"
+        "role": "home"
     },
     {
         "id": 3,
         "email": "siva@media.com",
         "password": "mediapass",
         "fullname": "Siva Bharathi",
-        "role": "Content Creator"
+        "role": "job"
     }
 ]
