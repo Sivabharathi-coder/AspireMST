@@ -10,7 +10,10 @@ import Navbar from "./Components/Navbar";
 import ProfilePage from "./Components/ProfilePage";
 import PropertyCard from "./HomeComponents/PropertyCard/PropertyCard";
 import HooksPlayground from "./Component/Hooks";
-
+import HomeNavbar from "./HomeComponents/Navbar/HomeNavbar"
+import HomePage from "./HomeComponents/HomePage/HomePage";
+import BookingConfirmation from "./HomeComponents/BookingConfirmation/BookingConfirmation";
+import PropertyDetails from "./HomeComponents/PropertyDetails/PropertyDetails";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
@@ -26,6 +29,10 @@ root.render(
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/homebooking" element={<PropertyCard />} />
             <Route path="/hooksPlayground" element={<HooksPlayground />} />
+            <Route path="/homenavbar" element={<HomePage />} />
+            <Route path="/booking/:id" element={<BookingConfirmation />} />
+            <Route path="/property/:id" element={<PropertyDetails />} />
+
 
         </Routes>
     </BrowserRouter>

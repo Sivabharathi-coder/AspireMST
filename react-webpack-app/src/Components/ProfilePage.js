@@ -12,21 +12,25 @@ const ProfilePage = () => {
     if (!profile) return <p>Loading profile...</p>;
 
     return (
-        <div className="profile-container compact">
+        <div className="profile-container enriched">
+            {/* Header */}
             <div className="profile-header">
+                <div className="profile-banner"></div>
                 <img src={profile.profilePic} alt={profile.name} className="profile-pic" />
                 <div className="profile-info">
                     <h1>{profile.name}</h1>
-                    <p className="role-location">{profile.role} &bull; {profile.location}</p>
+                    <p className="role-location">{profile.role} • {profile.location}</p>
                     <p><strong>Experience:</strong> {profile.experience}</p>
                 </div>
             </div>
 
+            {/* About Me */}
             <section className="profile-section about-me">
                 <h2>📝 About Me</h2>
                 <p>{profile.bio}</p>
             </section>
 
+            {/* Skills */}
             <section className="profile-section skills">
                 <h2>💡 Skills</h2>
                 <ul className="skills-list">
@@ -36,6 +40,7 @@ const ProfilePage = () => {
                 </ul>
             </section>
 
+            {/* Education */}
             <section className="profile-section education">
                 <h2>🎓 Education</h2>
                 {profile.education.map((edu, index) => (
@@ -45,6 +50,7 @@ const ProfilePage = () => {
                 ))}
             </section>
 
+            {/* Experience */}
             <section className="profile-section experience">
                 <h2>💼 Experience</h2>
                 {profile.experienceDetails.map((exp, index) => (
@@ -56,6 +62,7 @@ const ProfilePage = () => {
                 ))}
             </section>
 
+            {/* Projects */}
             <section className="profile-section projects">
                 <h2>🚀 Projects</h2>
                 {profile.projects.map((proj, index) => (

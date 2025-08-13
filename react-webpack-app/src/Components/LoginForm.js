@@ -29,7 +29,7 @@ const LoginForm = () => {
             if (foundUser.role === "job") {
                 navigate("/dashboard");
             } else if (foundUser.role === "home") {
-                navigate("/homebooking");
+                navigate("/homenavbar");
             } else {
                 // fallback route
                 navigate("/");
