@@ -31,7 +31,7 @@ const HomeNavbar = () => {
         <nav className="home-navbar">
             <div className="navbar-container">
                 <div className="navbar-logo" tabIndex={0}>
-                    <Link to="/">🏡 CozyStay</Link>
+                    <Link to="/"> CozyStay</Link>
                 </div>
 
                 <div className={`nav-links ${isMobileMenuOpen ? "active" : ""}`}>

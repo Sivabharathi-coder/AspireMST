@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=800&q=80",
+    "title": "Modern Family House",
+    "location": "San Francisco, CA",
+    "price": "$1,200,000",
+    "description": "4 bedrooms, 3 bathrooms, spacious backyard, near schools and parks."
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=80",
+    "title": "Luxury Villa",
+    "location": "Miami, FL",
+    "price": "$3,500,000",
+    "description": "5 bedrooms, private pool, ocean view, modern amenities."
+  },
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=80",
+    "title": "Cozy Cottage",
+    "location": "Portland, OR",
+    "price": "$750,000",
+    "description": "2 bedrooms, quiet neighborhood, perfect for small families."
+  },
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+    "title": "Downtown Apartment",
+    "location": "New York, NY",
+    "price": "$1,000,000",
+    "description": "3 bedrooms, city views, close to subway and restaurants."
+  },
+  {
+    "id": 5,
+    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80",
+    "title": "Beach House",
+    "location": "Santa Monica, CA",
+    "price": "$2,200,000",
+    "description": "4 bedrooms, oceanfront, private deck and garden."
+  },
+  {
+    "id": 6,
+    "image": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=800&q=80",
+    "title": "Suburban Home",
+    "location": "Austin, TX",
+    "price": "$850,000",
+    "description": "3 bedrooms, fenced yard, close to schools."
+  },
+  {
+    "id": 7,
+    "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+    "title": "Mountain Cabin",
+    "location": "Denver, CO",
+    "price": "$600,000",
+    "description": "Rustic style, 2 bedrooms, beautiful mountain views."
+  },
+  {
+    "id": 8,
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+    "title": "Penthouse Suite",
+    "location": "Chicago, IL",
+    "price": "$2,800,000",
+    "description": "4 bedrooms, rooftop terrace, downtown location."
+  },
+  {
+    "id": 9,
+    "image": "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=800&q=80",
+    "title": "Country Farmhouse",
+    "location": "Nashville, TN",
+    "price": "$950,000",
+    "description": "5 bedrooms, large land, barn and garden."
+  },
+  {
+    "id": 10,
+    "image": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80",
+    "title": "Urban Loft",
+    "location": "Seattle, WA",
+    "price": "$1,100,000",
+    "description": "2 bedrooms, open floor plan, city center."
+  }
+]

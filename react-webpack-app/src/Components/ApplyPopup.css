@@ -9,16 +9,20 @@
     justify-content: center;
     align-items: center;
     z-index: 999;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .popup.big-form {
     background: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 500px;
+    width: 100%;
+    max-width: 700px;
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
 }
 
 .popup.big-form h2 {
@@ -33,19 +37,25 @@
     margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 .popup-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .popup-buttons button {
-    padding: 8px 15px;
+    flex: 1 1 auto;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 .popup-buttons button:first-child {
@@ -68,4 +78,26 @@
     display: flex;
     align-items: center;
     font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .popup.big-form {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .popup-buttons {
+        flex-direction: column;
+    }
+
+    .popup-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.checkbox{
+    width: 5% !important;
 }

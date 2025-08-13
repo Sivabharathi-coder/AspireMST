@@ -9,6 +9,7 @@ import ForgotPassword from "./Components/ForgotPassword";
 import Navbar from "./Components/Navbar";
 import ProfilePage from "./Components/ProfilePage";
 import PropertyCard from "./HomeComponents/PropertyCard/PropertyCard";
+import HooksPlayground from "./Component/Hooks";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -23,7 +24,8 @@ root.render(
             <Route path="/JobList" element={<JobList />} />
             <Route path="/forgotPassword" element={<ForgotPassword />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/propertyCard" element={<PropertyCard />} />
+            <Route path="/homebooking" element={<PropertyCard />} />
+            <Route path="/hooksPlayground" element={<HooksPlayground />} />
 
         </Routes>
     </BrowserRouter>

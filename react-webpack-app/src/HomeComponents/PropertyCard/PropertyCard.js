@@ -1,21 +1,74 @@
 import React from "react";
+import properties from "../../properties.json";
 
-const PropertyCard = () => {
+const PropertyCard = ({ property }) => {
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto", boxShadow: "0 4px 10px rgb(0 0 0 / 0.1)", borderRadius: "8px", overflow: "hidden" }}>
-      <img 
-        src="https://images.unsplash.com/photo-1600585154187-5561e4ec6a02?auto=format&fit=crop&w=800&q=80" 
-        alt="Modern House" 
-        style={{ width: "100%", height: "300px", objectFit: "cover" }}
+    <div
+      style={{
+        boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+        borderRadius: "8px",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        backgroundColor: "#fff",
+        width: "18%",
+        marginBottom: "10px",
+        marginTop:"25px"
+      }}
+    >
+      <img
+        src={property.image}
+        alt={property.title}
+        style={{ width: "100%", height: "150px", objectFit: "cover" }}
       />
-      <div style={{ padding: "20px" }}>
-        <h2>Modern Family House</h2>
-        <p><strong>Location:</strong> San Francisco, CA</p>
-        <p><strong>Price:</strong> $1,200,000</p>
-        <p>This beautiful modern family house has 4 bedrooms, 3 bathrooms, a spacious backyard, and is located near schools and parks.</p>
+      <div style={{ padding: "10px", flexGrow: 1 }}>
+        <h3 style={{ margin: "0 0 8px 0", fontSize: "1rem" }}>{property.title}</h3>
+        <p style={{ margin: "4px 0" }}>
+          <strong>Location:</strong> {property.location}
+        </p>
+        <p style={{ margin: "4px 0" }}>
+          <strong>Price:</strong> {property.price}
+        </p>
+        <p style={{ fontSize: "0.85rem", color: "#555" }}>
+          {property.description}
+        </p>
+      </div>
+      <div style={{ padding: "10px", textAlign: "center" }}>
+        <button
+          style={{
+            backgroundColor: "#007bff",
+            color: "#fff",
+            padding: "8px 16px",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+            fontSize: "0.9rem",
+          }}
+        >
+          Book Now
+        </button>
       </div>
     </div>
   );
 };
 
-export default PropertyCard;
+const PropertyList = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        maxWidth: "1200px",
+        margin: "0 auto",
+        gap: "10px",
+      }}
+    >
+      {properties.map((prop) => (
+        <PropertyCard key={prop.id} property={prop} />
+      ))}
+    </div>
+  );
+};
+
+export default PropertyList;

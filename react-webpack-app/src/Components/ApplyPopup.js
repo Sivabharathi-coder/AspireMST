@@ -116,7 +116,7 @@ const ApplyPopup = ({ job, onClose }) => {
 
                 {/* Declaration */}
                 <label className="declaration">
-                    <input type="checkbox" name="declaration" checked={formData.declaration} onChange={handleChange} />
+                    <input type="checkbox" name="declaration"  className="checkbox" checked={formData.declaration} onChange={handleChange} />
                     I hereby declare that all information provided is true to the best of my knowledge.
                 </label>
                 {errors.declaration && <p className="error">{errors.declaration}</p>}
