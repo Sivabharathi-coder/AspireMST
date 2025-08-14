@@ -19,6 +19,7 @@ import Gallery from "./HomeComponents/sculptureList/sculptureList";
 import PayMini from "./HomeComponents/payments/payment";
 const container = document.getElementById("root");
 const root = createRoot(container);
+import "./index.css"
 
 root.render(
     <BrowserRouter>

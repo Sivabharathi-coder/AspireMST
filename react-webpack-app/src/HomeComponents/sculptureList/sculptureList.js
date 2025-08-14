@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { sculptureList } from "./data";
 
 export default function Gallery() {
     const [index, setIndex] = useState(0);
     const length = sculptureList.length;
     const [number, setNumber] = useState(0);
-
+    const [value, setValue] = useState("")
+    const prevValue = useRef("")
     function handleClick() {
         if (index >= length - 1) {
             setIndex(0);
@@ -17,6 +18,10 @@ export default function Gallery() {
         }
     }
 
+    useEffect(() => {
+        prevValue.current = value;
+
+    }, [value])
     let sculpture = sculptureList[index];
     return (
         <>
@@ -42,6 +47,18 @@ export default function Gallery() {
                     alert(number);
                 }, 3000)
             }}>+5</button>
+
+
+
+
+
+
+
+            <hr></hr>
+
+
+            <input value={value} onChange={(e) => setValue(e.target.value)} />
+            <p>{prevValue.current}</p>
         </>
     )
 }
