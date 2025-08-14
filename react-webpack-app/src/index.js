@@ -14,6 +14,9 @@ import HomeNavbar from "./HomeComponents/Navbar/HomeNavbar"
 import HomePage from "./HomeComponents/HomePage/HomePage";
 import BookingConfirmation from "./HomeComponents/BookingConfirmation/BookingConfirmation";
 import PropertyDetails from "./HomeComponents/PropertyDetails/PropertyDetails";
+import Footer from "./HomeComponents/Footer/import";
+import Gallery from "./HomeComponents/sculptureList/sculptureList";
+import PayMini from "./HomeComponents/payments/payment";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
@@ -32,6 +35,9 @@ root.render(
             <Route path="/homenavbar" element={<HomePage />} />
             <Route path="/booking/:id" element={<BookingConfirmation />} />
             <Route path="/property/:id" element={<PropertyDetails />} />
+            <Route path="/importFooter" element={<Footer />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/PayMini" element={<PayMini />} />
 
 
         </Routes>

@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle, FaBars, FaChevronDown } from "react-icons/fa";
 import './HomeNavbar.css';
-import PropertyList from "../PropertyCard/PropertyCard";
-import Footer from "../Footer/footer";
 
 const HomeNavbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,7 +22,7 @@ const HomeNavbar = () => {
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
-
+    
     const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
     const togglePropertiesDropdown = () => setIsPropertiesDropdownOpen(!isPropertiesDropdownOpen);
     const toggleUserDropdown = () => setIsUserDropdownOpen(!isUserDropdownOpen);
@@ -87,8 +85,9 @@ const HomeNavbar = () => {
                     </div>
                 </div>
             </nav>
+            
 
-          
+
 
         </>
     );
