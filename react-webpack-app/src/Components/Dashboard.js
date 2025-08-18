@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
-import jobsData from "../jobs.json";
 import Navbar from "./Navbar";
-import ApplyPopup from "./ApplyPopup"; 
+import ApplyPopup from "./ApplyPopup";
 import "./Dashboard.css";
 import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { setJobs } from "../Redux/store";
+import jobsData from "../jobs.json";
 
 const Dashboard = () => {
-    const [jobs, setJobs] = useState([]);
+    // const [jobs, setJobs] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [locationFilter, setLocationFilter] = useState("");
     const [filteredJobs, setFilteredJobs] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [selectedJob, setSelectedJob] = useState(null);
+    const dispatch = useDispatch();
+    const jobs = useSelector((state) => state.app.jobs); //  get jobs from Redux
+
 
     useEffect(() => {
-        setJobs(jobsData);
+        dispatch(setJobs(jobsData)); //  store jobs in Redux
         setFilteredJobs(jobsData);
     }, []);
 

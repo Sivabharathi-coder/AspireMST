@@ -3,6 +3,7 @@ import "./payment.css";
 import { createConnection } from './chat.js';
 
 export default function PayMiniBootstrap() {
+
     const [method, setMethod] = useState("");
     const [amount, setAmount] = useState("");
     const [note, setNote] = useState("");
@@ -14,6 +15,7 @@ export default function PayMiniBootstrap() {
     const [cvv, setCvv] = useState("");
     const [upiId, setUpiId] = useState("");
     const pinRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
+
     useEffect(() => {
         const connection = createConnection();
         connection.connect();
@@ -120,7 +122,7 @@ export default function PayMiniBootstrap() {
             {showPin && (
                 <div className="pin-overlay">
                     <div className="pin-box">
-                        <h5>Enter PIN</h5>
+                        <h5 className="pin-label">Enter PIN</h5>
                         <p>Confirm payment of ₹{amount} via {method.toUpperCase()}.</p>
                         <div className="pin-inputs">
                             {pin.map((d, i) => (

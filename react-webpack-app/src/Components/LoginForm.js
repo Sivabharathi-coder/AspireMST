@@ -3,12 +3,15 @@ import users from '../users.json';
 import './LoginForm.css';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setUser } from "../Redux/store";
 
 const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,6 +19,8 @@ const LoginForm = () => {
             (user) => user.email === email && user.password === password
         );
         if (foundUser) {
+            dispatch(setUser(foundUser));
+
             alert(`Welcome ${foundUser.fullname}`);
 
             // Save user info in localStorage

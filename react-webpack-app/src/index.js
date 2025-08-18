@@ -20,27 +20,31 @@ import PayMini from "./HomeComponents/payments/payment";
 const container = document.getElementById("root");
 const root = createRoot(container);
 import "./index.css"
+import store from "./Redux/store";
+import { Provider } from "react-redux";
 
 root.render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<LoginForm />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/navbar" element={<Navbar />} />
-            <Route path="/WindowTracker" element={<WindowTracker />} />
-            <Route path="/JobList" element={<JobList />} />
-            <Route path="/forgotPassword" element={<ForgotPassword />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/homebooking" element={<PropertyCard />} />
-            <Route path="/hooksPlayground" element={<HooksPlayground />} />
-            <Route path="/homenavbar" element={<HomePage />} />
-            <Route path="/booking/:id" element={<BookingConfirmation />} />
-            <Route path="/property/:id" element={<PropertyDetails />} />
-            <Route path="/importFooter" element={<Footer />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/PayMini" element={<PayMini />} />
+    <Provider store={store}>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<LoginForm />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/navbar" element={<Navbar />} />
+                <Route path="/WindowTracker" element={<WindowTracker />} />
+                <Route path="/JobList" element={<JobList />} />
+                <Route path="/forgotPassword" element={<ForgotPassword />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/homebooking" element={<PropertyCard />} />
+                <Route path="/hooksPlayground" element={<HooksPlayground />} />
+                <Route path="/homenavbar" element={<HomePage />} />
+                <Route path="/booking/:id" element={<BookingConfirmation />} />
+                <Route path="/property/:id" element={<PropertyDetails />} />
+                <Route path="/importFooter" element={<Footer />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/PayMini" element={<PayMini />} />
 
 
-        </Routes>
-    </BrowserRouter>
+            </Routes>
+        </BrowserRouter>
+    </Provider>
 );
