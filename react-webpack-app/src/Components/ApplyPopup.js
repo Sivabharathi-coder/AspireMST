@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addApplication } from "../Redux/store";
 import "./ApplyPopup.css";
 
 const ApplyPopup = ({ job, onClose }) => {
-    const [formData, setFormData] = useState({
+    const dispatch = useDispatch();
+
+    const initialFormState = {
         fullName: "",
         email: "",
         phone: "",
@@ -14,8 +18,9 @@ const ApplyPopup = ({ job, onClose }) => {
         expectedSalary: "",
         resume: null,
         declaration: false
-    });
+    };
 
+    const [formData, setFormData] = useState(initialFormState);
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
@@ -56,7 +61,23 @@ const ApplyPopup = ({ job, onClose }) => {
 
     const handleSubmit = () => {
         if (validateForm()) {
+            // Prepare application data
+            const applicationData = {
+                jobId: job.id,
+                jobTitle: job.title,
+                ...formData
+            };
+
+            // Dispatch to Redux
+            dispatch(addApplication(applicationData));
+
             alert(`Application submitted for ${job.title}!`);
+
+            // Reset form
+            setFormData(initialFormState);
+            setErrors({});
+
+            // Close popup
             onClose();
         }
     };
@@ -116,7 +137,7 @@ const ApplyPopup = ({ job, onClose }) => {
 
                 {/* Declaration */}
                 <label className="declaration">
-                    <input type="checkbox" name="declaration"  className="checkbox" checked={formData.declaration} onChange={handleChange} />
+                    <input type="checkbox" name="declaration" checked={formData.declaration} onChange={handleChange} />
                     I hereby declare that all information provided is true to the best of my knowledge.
                 </label>
                 {errors.declaration && <p className="error">{errors.declaration}</p>}

@@ -16,7 +16,11 @@ const Dashboard = () => {
     const [selectedJob, setSelectedJob] = useState(null);
     const dispatch = useDispatch();
     const jobs = useSelector((state) => state.app.jobs); //  get jobs from Redux
+    const applications = useSelector((state) => state.app.applications);
 
+    const isJobApplied = (jobId) => {
+        return applications.some(app => app.jobId === jobId);
+    };
 
     useEffect(() => {
         dispatch(setJobs(jobsData)); //  store jobs in Redux
@@ -78,13 +82,32 @@ const Dashboard = () => {
             <div className="job-list">
                 {filteredJobs.length > 0 ? (
                     filteredJobs.map((job) => (
-                        <div className="job-card" key={job.id}>
-                            <h3>{job.title}</h3>
+                        <div
+                            className={`job-card p-4 border rounded shadow mb-4 transition-all ${isJobApplied(job.id)
+                                    ? "bg-gray-100 opacity-70 border-gray-300"
+                                    : "bg-white hover:shadow-lg"
+                                }`}
+                            key={job.id}
+                        >
+                            <h3 className={`text-lg font-semibold ${isJobApplied(job.id) ? "line-through text-gray-500" : ""}`}>
+                                {job.title}
+                            </h3>
                             <p><strong>🏢 Company:</strong> {job.company}</p>
                             <p><strong>📍 Location:</strong> {job.location}</p>
                             <p><strong>💰 Salary:</strong> {job.salary}</p>
-                            <button onClick={() => handleApplyClick(job)}>Apply Now</button>
+
+                            <button
+                                onClick={() => handleApplyClick(job)}
+                                disabled={isJobApplied(job.id)}
+                                className={`mt-2 px-4 py-2 rounded ${isJobApplied(job.id)
+                                        ? "bg-gray-400 cursor-not-allowed text-white"
+                                        : "bg-blue-500 hover:bg-blue-600 text-white"
+                                    }`}
+                            >
+                                {isJobApplied(job.id) ? "Applied" : "Apply Now"}
+                            </button>
                         </div>
+
                     ))
                 ) : (
                     <p className="no-results">No jobs found matching your criteria.</p>
