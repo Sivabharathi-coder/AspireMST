@@ -84,8 +84,8 @@ const Dashboard = () => {
                     filteredJobs.map((job) => (
                         <div
                             className={`job-card p-4 border rounded shadow mb-4 transition-all ${isJobApplied(job.id)
-                                    ? "bg-gray-100 opacity-70 border-gray-300"
-                                    : "bg-white hover:shadow-lg"
+                                ? "bg-gray-100 opacity-70 border-gray-300"
+                                : "bg-white hover:shadow-lg"
                                 }`}
                             key={job.id}
                         >
@@ -99,13 +99,15 @@ const Dashboard = () => {
                             <button
                                 onClick={() => handleApplyClick(job)}
                                 disabled={isJobApplied(job.id)}
-                                className={`mt-2 px-4 py-2 rounded ${isJobApplied(job.id)
-                                        ? "bg-gray-400 cursor-not-allowed text-white"
+                                className={`mt-2 px-4 py-2 rounded font-medium transition-colors duration-200 
+        ${isJobApplied(job.id)
+                                        ? "bg-green-500 text-white cursor-default"
                                         : "bg-blue-500 hover:bg-blue-600 text-white"
                                     }`}
                             >
                                 {isJobApplied(job.id) ? "Applied" : "Apply Now"}
                             </button>
+
                         </div>
 
                     ))

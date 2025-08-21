@@ -23,6 +23,12 @@ import "./index.css"
 import store from "./Redux/store";
 import { Provider } from "react-redux";
 
+import GridTable from "./Components/FormElements";
+import FragmentExample from "./Components/Fragment";
+
+import Calculator from "./Components/LiftingStateUp";
+import Cart from "./Components/LiftingStateUp";
+import CustomHooks from "./Component/CustomHooks/CustomHooks";
 root.render(
     <Provider store={store}>
         <BrowserRouter>
@@ -42,7 +48,12 @@ root.render(
                 <Route path="/importFooter" element={<Footer />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/PayMini" element={<PayMini />} />
+                <Route path="/fragment" element={<FragmentExample />} />
+                <Route path="/gridtable" element={<GridTable />} />
 
+                <Route path="/liftingStateUp" element={<Cart />} />
+
+                <Route path="/customHooks" element={<CustomHooks />} />
 
             </Routes>
         </BrowserRouter>
