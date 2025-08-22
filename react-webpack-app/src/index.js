@@ -10,25 +10,27 @@ import Navbar from "./Components/Navbar";
 import ProfilePage from "./Components/ProfilePage";
 import PropertyCard from "./HomeComponents/PropertyCard/PropertyCard";
 import HooksPlayground from "./Component/Hooks";
-import HomeNavbar from "./HomeComponents/Navbar/HomeNavbar"
 import HomePage from "./HomeComponents/HomePage/HomePage";
 import BookingConfirmation from "./HomeComponents/BookingConfirmation/BookingConfirmation";
 import PropertyDetails from "./HomeComponents/PropertyDetails/PropertyDetails";
 import Footer from "./HomeComponents/Footer/import";
 import Gallery from "./HomeComponents/sculptureList/sculptureList";
 import PayMini from "./HomeComponents/payments/payment";
-const container = document.getElementById("root");
-const root = createRoot(container);
-import "./index.css"
 import store from "./Redux/store";
 import { Provider } from "react-redux";
-
 import GridTable from "./Components/FormElements";
 import FragmentExample from "./Components/Fragment";
-
-import Calculator from "./Components/LiftingStateUp";
 import Cart from "./Components/LiftingStateUp";
 import CustomHooks from "./Component/CustomHooks/CustomHooks";
+import UserProvider from "./Component/useContext";
+import UseReference from "./Component/useRed";
+import "./index.css"
+import Count from "./HomeComponents/Task/count";
+import FetchJson from "./HomeComponents/Task/fetchJSON";
+import FAQ from "./HomeComponents/Task/Faq";
+const container = document.getElementById("root");
+const root = createRoot(container);
+
 root.render(
     <Provider store={store}>
         <BrowserRouter>
@@ -50,11 +52,15 @@ root.render(
                 <Route path="/PayMini" element={<PayMini />} />
                 <Route path="/fragment" element={<FragmentExample />} />
                 <Route path="/gridtable" element={<GridTable />} />
-
                 <Route path="/liftingStateUp" element={<Cart />} />
-
                 <Route path="/customHooks" element={<CustomHooks />} />
+                <Route path="/useContext" element={<UserProvider />} />
+                <Route path="/useReferen" element={<UseReference />} />
+                <Route path="/count" element={<Count />} />
 
+                <Route path="/fetchJson" element={<FetchJson />} />
+                
+                <Route path="/faq" element={<FAQ />} />
             </Routes>
         </BrowserRouter>
     </Provider>
