@@ -28,6 +28,9 @@ import "./index.css"
 import Count from "./HomeComponents/Task/count";
 import FetchJson from "./HomeComponents/Task/fetchJSON";
 import FAQ from "./HomeComponents/Task/Faq";
+import LiftingState from "./HomeComponents/LiftingStateUp/liftingstateup";
+import Modal from "./HomeComponents/Modal/createPortal";
+import CreateModal from "./HomeComponents/Modal/createPortal";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
@@ -57,10 +60,11 @@ root.render(
                 <Route path="/useContext" element={<UserProvider />} />
                 <Route path="/useReferen" element={<UseReference />} />
                 <Route path="/count" element={<Count />} />
-
                 <Route path="/fetchJson" element={<FetchJson />} />
-                
-                <Route path="/faq" element={<FAQ />} />
+                <Route path="/faq" element={<FAQ />} />                      
+                <Route path="/liftingState" element={<LiftingState />} />
+               <Route path="/modal" element={<CreateModal />} />
+
             </Routes>
         </BrowserRouter>
     </Provider>

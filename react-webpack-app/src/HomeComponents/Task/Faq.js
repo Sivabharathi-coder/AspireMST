@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function FAQ() {
+
     const [openIndex, setOpenIndex] = useState(null);
 
     const faqs = [
@@ -21,7 +22,7 @@ function FAQ() {
             answer: "useEffect is a Hook for performing side effects like data fetching."
         }
     ];
-
+    
     const toggleFAQ = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };

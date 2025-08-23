@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 function FetchJson() {
 
     const [data, setData] = useState(null);
