@@ -1,0 +1,102 @@
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  color: #2d87f0;
+  margin-bottom: 30px;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* Dropdown Selector */
+.selector-box {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.selector-box h4 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #2d87f0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown:hover {
+  border-color: #1b5cc5;
+}
+
+/* Job Card */
+.card {
+  flex: 2;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  color: #2d87f0;
+  margin-bottom: 5px;
+}
+
+.card h4 {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card p {
+  margin: 8px 0;
+}
+
+/* Skills List */
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card li {
+  background: #f1f6ff;
+  color: #2d87f0;
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Alert */
+.alert {
+  flex: 2;
+  padding: 20px;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+}

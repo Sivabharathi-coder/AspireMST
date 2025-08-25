@@ -71,10 +71,17 @@ export default function HooksPlayground() {
         return count * 2;
     }, [count]);
 
+
     // ---------------- useCallback ----------------
+
     const showAlert = useCallback(() => {
         alert(`Hello, ${formState.name || "stranger"}!`);
     }, [formState.name]);
+
+    // without CallBack
+    // function showAlert() {
+    //     alert(`Hello, ${formState.name || "stranger"}!`);
+    // }
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>

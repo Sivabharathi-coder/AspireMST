@@ -31,6 +31,7 @@ import FAQ from "./HomeComponents/Task/Faq";
 import LiftingState from "./HomeComponents/LiftingStateUp/liftingstateup";
 import Modal from "./HomeComponents/Modal/createPortal";
 import CreateModal from "./HomeComponents/Modal/createPortal";
+import LiftingStateWithHooks from "./HomeComponents/LiftingStateUp/liftingstateup";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
@@ -62,7 +63,7 @@ root.render(
                 <Route path="/count" element={<Count />} />
                 <Route path="/fetchJson" element={<FetchJson />} />
                 <Route path="/faq" element={<FAQ />} />                      
-                <Route path="/liftingState" element={<LiftingState />} />
+                <Route path="/liftingState" element={<LiftingStateWithHooks />} />
                <Route path="/modal" element={<CreateModal />} />
 
             </Routes>
