@@ -32,6 +32,8 @@ import LiftingState from "./HomeComponents/LiftingStateUp/liftingstateup";
 import Modal from "./HomeComponents/Modal/createPortal";
 import CreateModal from "./HomeComponents/Modal/createPortal";
 import LiftingStateWithHooks from "./HomeComponents/LiftingStateUp/liftingstateup";
+import ControlledLogin from "./HomeComponents/ControlledComp/ControlledComponenets";
+import UncontrolledFeedback from "./HomeComponents/ControlledComp/UncontrolledComp";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
@@ -62,10 +64,12 @@ root.render(
                 <Route path="/useReferen" element={<UseReference />} />
                 <Route path="/count" element={<Count />} />
                 <Route path="/fetchJson" element={<FetchJson />} />
-                <Route path="/faq" element={<FAQ />} />                      
+                <Route path="/faq" element={<FAQ />} />
                 <Route path="/liftingState" element={<LiftingStateWithHooks />} />
-               <Route path="/modal" element={<CreateModal />} />
+                <Route path="/modal" element={<CreateModal />} />
 
+                <Route path="/controlledlogin" element={<ControlledLogin />} />
+                <Route path="/uncontrolledFeedback" element={<UncontrolledFeedback />} />
             </Routes>
         </BrowserRouter>
     </Provider>
