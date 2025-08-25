@@ -28,8 +28,6 @@ import "./index.css"
 import Count from "./HomeComponents/Task/count";
 import FetchJson from "./HomeComponents/Task/fetchJSON";
 import FAQ from "./HomeComponents/Task/Faq";
-import LiftingState from "./HomeComponents/LiftingStateUp/liftingstateup";
-import Modal from "./HomeComponents/Modal/createPortal";
 import CreateModal from "./HomeComponents/Modal/createPortal";
 import LiftingStateWithHooks from "./HomeComponents/LiftingStateUp/liftingstateup";
 import ControlledLogin from "./HomeComponents/ControlledComp/ControlledComponenets";
@@ -67,7 +65,6 @@ root.render(
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/liftingState" element={<LiftingStateWithHooks />} />
                 <Route path="/modal" element={<CreateModal />} />
-
                 <Route path="/controlledlogin" element={<ControlledLogin />} />
                 <Route path="/uncontrolledFeedback" element={<UncontrolledFeedback />} />
             </Routes>
