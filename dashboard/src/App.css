@@ -1,0 +1,141 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centering App */
+.app {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Form Container */
+.form-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 360px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-4px);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Inputs */
+.form-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-container input:focus {
+  border: 1px solid #0078ff;
+  box-shadow: 0 0 6px rgba(0, 120, 255, 0.3);
+}
+
+/* Buttons */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #0078ff, #00bfff);
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form-container button:hover {
+  background: linear-gradient(90deg, #005fcc, #0099cc);
+  transform: translateY(-2px);
+}
+
+/* Dashboard */
+.dashboard {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.dashboard h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Table Styling */
+.dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.dashboard th,
+.dashboard td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.dashboard th {
+  background: #0078ff;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dashboard tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.dashboard tr:hover {
+  background: #eaf4ff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dashboard img {
+  border-radius: 50%;
+  border: 2px solid #0078ff;
+  padding: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
