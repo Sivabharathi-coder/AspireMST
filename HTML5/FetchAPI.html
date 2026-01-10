@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetch</title>
+</head>
+
+<body>
+    <h1>API Fetch </h1>
+    <script>
+
+        const API_URL = "https://reqres.in/api/users";
+
+        function getUsers() {
+            fetch(API_URL,
+                {
+                    method:'GET',
+                    headers:{
+                        'Content-Type':'application.json',
+                        'Accept':'application.json',
+                        'Authorization':"Bearer acces_token"
+                    }
+
+                }
+            )
+            
+                .then(res => res.json())
+                .then(data => {
+                    console.log("data", data);
+                })
+        }
+
+        function createUser() {
+            fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: "siva",
+                    email: "siva@gmail.com"
+                })
+
+            })
+                .then(res => res.json)
+                .then(data => {
+                    console.log("New User Created");
+                    console.log(data);
+                })
+        }
+
+        function updateUser() {
+
+
+            fetch(`${API_URL}/1`, {
+                method: 'PUT',
+                headers: { 'content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: "siva bharathi",
+                    email: "siva@email.com"
+                })
+            })
+
+                .then(res => res.json())
+                .then(data => {
+                    console.log("data Updated")
+                })
+
+        }
+
+        function patchUser() {
+            fetch(`${API_URL}/1`, {
+                method: 'PATCH',
+                headers: { 'content-type': 'Application/json' },
+                body: JSON.stringify({
+                    email: 'sivapatch@gmail.com'
+                })
+
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log("data PAtched")
+                    })
+
+            })
+        }
+        function deleteUser() {
+            fetch(`${API_URL}/1`, {
+                method: 'DELETE'
+            })
+                .then(res => {
+                    if (res.ok) {
+                        console.log("User Deleted ");
+                    } else {
+                        console.log("DELETE - Failed");
+                    }
+                });
+        }
+        getUsers();
+        createUser();
+        updateUser();
+        patchUser();
+        deleteUser();
+    </script>
+
+</body>
+
+</html>

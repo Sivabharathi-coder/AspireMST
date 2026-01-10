@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Listing</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>Job Listings Portal</h1>
+        <div class="actions">
+            <input type="text" id="skillinput" placeholder="Search skill (e.g. Java)" />
+            <button onclick="filterJobs()">Filter Jobs</button>
+            <!-- <button onclick="highlightTopJob()">Top Job</button> -->
+            <button onclick="showTopJob()" class="top-btn">Show Top Job</button>
+            <button onclick="generateSkillStats()">Skill Stats</button>
+            <button onclick="generateReport()">Generate Report</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="top-job-card" class="top-job-card" style="display: none;"></div>
+
+        <section id="summary" class="summary-box">Summary</section>
+        <section id="jobsfilter" class="filtered-jobs"></section>
+        <section id="job-list"></section>
+
+        <section id="job-summary-portal" class="report-box"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

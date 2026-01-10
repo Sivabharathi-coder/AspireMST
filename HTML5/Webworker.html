@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Word Count with Web Worker</title>
+    <style>
+        textarea {
+            width: 100%;
+            height: 150px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <textarea id="textInput" placeholder="Paste a large paragraph..."></textarea>
+    <p><strong>Word Count:</strong> <span id="wordCount">0</span></p>
+
+    <script>
+        const textarea = document.getElementById("textInput");
+        const wordCountDisplay = document.getElementById("wordCount");
+
+        const worker = new Worker("wordWorker.js");
+
+        textarea.addEventListener("input", () => {
+            worker.postMessage(textarea.value);
+        });
+
+        worker.onmessage = function (e) {
+            wordCountDisplay.textContent = e.data;
+        };
+    </script>
+</body>
+
+</html>

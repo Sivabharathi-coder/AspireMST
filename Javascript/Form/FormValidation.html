@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            padding: 30px;
+        }
+
+        .form-container {
+            background: #fff;
+            padding: 20px 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="myForm">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" />
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" />
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" />
+                <div class="error" id="passwordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password *</label>
+                <input type="password" id="confirmPassword" />
+                <div class="error" id="confirmPasswordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender *</label>
+                <select id="gender">
+                    <option value="">Select Gender </option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div class="error" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label><input type="checkbox" id="terms" /> I agree to the terms </label>
+                <div class="error" id="termsError"></div>
+            </div>
+
+            <button type="submit">Submit</button>
+            <div class="success" id="successMsg"></div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("myForm");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get input values
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const gender = document.getElementById("gender").value;
+            const terms = document.getElementById("terms").checked;
+
+            // Clear all errors
+            document.querySelectorAll(".error").forEach(e => e.innerText = "");
+            document.getElementById("successMsg").innerText = "";
+
+            let isValid = true;
+
+            // Validation
+            if (name === "") {
+                document.getElementById("nameError").innerText = "Name is required.";
+                isValid = false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById("emailError").innerText = "Invalid email address.";
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerText = "Password must be at least 6 characters.";
+                isValid = false;
+            }
+
+            if (password !== confirmPassword) {
+                document.getElementById("confirmPasswordError").innerText = "Passwords do not match.";
+                isValid = false;
+            }
+
+            if (gender === "") {
+                document.getElementById("genderError").innerText = "Please select gender.";
+                isValid = false;
+            }
+
+            if (!terms) {
+                document.getElementById("termsError").innerText = "You must agree to the terms.";
+                isValid = false;
+            }
+
+            // If valid, show success
+            if (isValid) {
+                document.getElementById("successMsg").innerText = "Form submitted successfully ";
+                form.reset();
+            }
+        });
+    </script>
+
+</body>
+
+</html>

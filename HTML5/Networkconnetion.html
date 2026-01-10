@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectionStatus</title>
+</head>
+
+<body>
+    <h2>Live Network Status Monitor</h2>
+    <p>Status: <strong id="status"></strong></p>
+    <p>Details: <span id="details"></span></p>
+    <pre>Connection Status: <span id="statuss"></span></pre>
+
+    <script>
+        const statusEl = document.getElementById("status");
+        const detailsEl = document.getElementById("details");
+
+
+        function updateStatus() {
+            const status = navigator.onLine ? "ONLINE" : "OFFLINE";
+            document.getElementById("status").textContent = status;
+        }
+
+
+        window.addEventListener("online", updateStatus);
+        window.addEventListener("offline", updateStatus);
+        window.onload = updateStatus;
+
+        if (navigator.connection) {
+            function onConnectionChange() {
+                const c = navigator.connection;
+                detailsEl.textContent =
+                    `Type: ${c.effectiveType}, Downlink: ${c.downlink} Mbps, RTT: ${c.rtt} ms`;
+            }
+            navigator.connection.addEventListener("change", onConnectionChange);
+            onConnectionChange();
+        } else {
+            detailsEl.textContent = "NetworkInformation API not supported.";
+        }
+
+    </script>
+
+</body>
+
+</html>

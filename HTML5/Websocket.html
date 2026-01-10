@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websocket </title>
+</head>
+
+<body>
+
+    <h2>Web Chat</h2>
+    <input id="msginp" placeholder="typemsg...." />
+    <button type="button" onclick="onSubmit()">Send</button>
+    <div class="chat"></div>
+
+
+    <script>
+
+        const ws =new WebSocket("wss://ws.ifelse.io");
+
+        ws.onopen= ()=>{
+            console.log("conneted to server")
+        }
+        ws.onmessage=(event){
+            const chatbox=document.getElementById("chat");
+            chatBox.innerHTML += `<p>${event.data}</p>`;
+        }
+
+        function onSubmit(){
+            const input=document.getElementById("msginp");
+            ws.send(input.value);
+            input.value=""; 
+        }
+
+    </script>
+</body>
+
+</html>

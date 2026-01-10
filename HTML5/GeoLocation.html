@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Location</title>
+</head>
+
+<body>
+
+    <h1>clisk here to get a location</h1>
+    <button onclick="getLocation()">Get Location</button>
+    <p id="output"></p>
+
+    <script>
+        const output = document.getElementById("output");
+
+        function getLocation() {
+            if (!navigator.geolocation) {
+                output.textContent = "Geolocation not supported.";
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    output.innerHTML = `Latitude: ${lat}<br> Longitude: ${lon}`;
+                },
+                function (error) {
+                    output.textContent = " Permission denied.";
+                }
+            );
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Siva Bharathi",
+    "email": "siva@example.com",
+    "role": "Developer",
+    "avatar": "/user.png"
+  },
+  {
+    "id": 2,
+    "name": "Arun Kumar",
+    "email": "arun@example.com",
+    "role": "Designer",
+    "avatar": "/user.png"
+  }
+]

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Greeting Example</title>
+</head>
+
+<body>
+  <h2>Welcome to the Job Portal</h2>
+
+  <label for="username">Enter your name:</label>
+  <input type="text" id="username" />
+  <button onclick="handleLogin()">Login</button>
+
+  <p id="greeting"></p>
+
+  <script>
+    // Function to greet user by name
+    function greet(userName) {
+      document.getElementById("greeting").innerText = `Hello, ${userName}! 👋 Welcome back.`;
+    }
+
+    // This function gets called when user clicks "Login"
+    function handleLogin() {
+      const name = document.getElementById("username").value;
+      if (name.trim() !== "") {
+        greet(name); 
+      } else {
+        alert("Please enter your name");
+      }
+    }
+  </script>
+</body>
+
+</html>

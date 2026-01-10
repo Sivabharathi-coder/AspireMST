@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dark Mode Toggle</title>
+    <style>
+        body.light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        body.dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+
+    <script>
+        window.onload = function () {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                document.body.className = savedTheme;
+            } else {
+                document.body.className = "light";
+            }
+        };
+
+        function toggleTheme() {
+            const currentTheme = document.body.className;
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.body.className = newTheme;
+            localStorage.setItem("theme", newTheme);
+        }
+    </script>
+</body>
+
+</html>

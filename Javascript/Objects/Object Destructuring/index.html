@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Destructuring</title>
+</head>
+
+<body>
+
+    <div id="profile"> </div>
+
+    <script>
+        const userRes = {
+            id: 100,
+            name: "siva bharathi",
+            age: 23,
+            location: {
+                city: "chennai",
+                state: "Tamil nadu"
+            },
+            skills: ["React", "Node JS", "Javascript"],
+            contact: {
+                email: "siva@gmail.com",
+                phone: "0987634562"
+            }
+        };
+
+
+        const { name, location: { city }, skills: [, , primaryskill], contact: { phone } } = userRes;
+
+        const ProfileDiv = document.getElementById("profile");
+        ProfileDiv.innerHTML = ` 
+            <p>Name:${name}</p>
+            <p>Location:${city}</p>
+            <p>skill:${primaryskill}</p>
+            <p>Phone:${phone}</p>
+        
+        `
+    </script>
+</body>
+
+</html>

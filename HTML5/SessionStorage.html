@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session storage</title>
+</head>
+
+<body>
+
+    <form>
+        Name: <input type="text" id="name" /><br><br>
+        Email: <input type="email" id="email" /><br><br>
+        <button type="button" onclick="saveData()">Save</button>
+        <button type="button" onclick="clearData()">Clear</button>
+    </form>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("name").value = sessionStorage.getItem("name") || "";
+            document.getElementById("email").value = sessionStorage.getItem("email") || "";
+
+        };
+        const saveData = () => {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            sessionStorage.setItem("name", name);
+            sessionStorage.setItem("email", email);
+            alert("Data saved in sessionStorage!");
+        }
+
+        function clearData() {
+            sessionStorage.clear();
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            alert("Session data cleared.");                 
+        }
+    </script>
+</body>
+
+</html>

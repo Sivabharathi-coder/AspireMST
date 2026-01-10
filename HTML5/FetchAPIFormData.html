@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormData </title>
+</head>
+
+<body>
+
+
+    <div>Uploda form </div>
+    <form id="uploadform">
+        <input type="text" placeholder="Name" name="username">
+        <input type="file" placeholder="file upload" name="photo">
+        <button type="submit">Submit</button>
+    </form>
+    <pre id="response"></pre>
+
+    <script>
+        const form = document.getElementById('uploadform');
+        const responseBox = document.getElementById('response');
+
+        form.addEventListener('submit', function (e) {
+            event.preventDefault();
+            const FormData = new FormData(form);
+            fetch('https://httpbin.org/post', {
+                method: 'POST',
+                body: formData
+            })
+
+                .then(res => res.json())
+                .then(data => {
+                    console.log("Server Response:", data);
+                    responseBox.textContent = JSON.stringify(data, null, 2);
+                })
+                .catch(error => {
+                    console.error("error", error);
+                    responseBox.textContent = "Erro occured";
+                })
+        })
+    </script>
+</body>
+
+</html>

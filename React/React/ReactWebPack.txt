@@ -1,0 +1,47 @@
+📁 1. Create Project Folder
+bash
+Copy
+Edit
+mkdir react-webpack-app
+cd react-webpack-app
+npm init -y
+📦 2. Install Starter Dependencies
+Install React and ReactDOM:
+
+bash
+Copy
+Edit
+npm install react react-dom
+Install development dependencies:
+
+bash
+Copy
+Edit
+npm install --save-dev webpack webpack-cli webpack-dev-server
+npm install --save-dev babel-loader @babel/core @babel/preset-env @babel/preset-react
+npm install --save-dev html-webpack-plugin
+📦 Breakdown:
+Package	Purpose
+webpack	Core bundler
+webpack-cli	CLI tool for webpack
+webpack-dev-server	Dev server with live reloading
+babel-loader	Loader for Webpack to use Babel
+@babel/core	Babel compiler core
+@babel/preset-env	For compiling modern JS
+@babel/preset-react	For compiling JSX
+html-webpack-plugin	Generates an HTML file and injects the bundle
+
+
+
+react-webpack-app/
+│
+├── node_modules/
+├── public/
+│   └── index.html
+├── src/
+│   ├── App.js
+│   └── index.js
+├── .babelrc
+├── package.json
+├── webpack.config.js
+└── README.md (optional)

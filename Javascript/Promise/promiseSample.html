@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Methods </title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Promise Methods Demo</h2>
+
+    <button onclick="runAll()">Run Promise.all()</button>
+    <button onclick="runAllSettled()">Run Promise.allSettled()</button>
+    <button onclick="runAny()">Run Promise.any()</button>
+    <button onclick="runRace()">Run Promise.race()</button>
+
+    <h3>Output:</h3>
+    <pre id="output"></pre>
+
+    <script>
+        const output = document.getElementById('output');
+
+        const p1 = new Promise(resolve => setTimeout(() => resolve(" p1 success"), 1000));
+        const p2 = new Promise((_, reject) => setTimeout(() => reject(" p2 failed"), 500));
+        const p3 = new Promise(resolve => setTimeout(() => resolve("p3 success"), 2000));
+
+        function resetOutput() {
+            output.textContent = 'Loading...\n';
+        }
+
+        function runAll() {
+            resetOutput();
+            Promise.all([p1, p2, p3])
+                .then(result => output.textContent += "Promise.all :\n" + JSON.stringify(result, null, 2))
+                .catch(error => output.textContent += "Promise.all :\n" + error);
+        }
+
+        function runAllSettled() {
+            resetOutput();
+            Promise.allSettled([p1, p2, p3])
+                .then(result => output.textContent += "Promise.allSettled :\n" + JSON.stringify(result, null, 2));
+        }
+
+        function runAny() {
+            resetOutput();
+            Promise.any([p1, p2, p3])
+                .then(result => output.textContent += "Promise.any :\n" + result)
+                .catch(error => output.textContent += "Promise.any :\n" + error);
+        }
+
+        function runRace() {
+            resetOutput();
+            Promise.race([p1, p2, p3])
+                .then(result => output.textContent += "Promise.race :\n" + result)
+                .catch(error => output.textContent += "Promise.race :\n" + error);
+        }
+    </script>
+</body>
+
+</html>

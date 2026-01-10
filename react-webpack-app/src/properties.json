@@ -1,0 +1,292 @@
+[
+  {
+    "id": 1,
+    "images": [
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Modern Family House",
+    "location": "San Francisco, CA",
+    "price": "$1,200,000",
+    "description": "4 bedrooms, 3 bathrooms, spacious backyard, near schools and parks.",
+    "amenities": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "Fully Equipped Kitchen",
+      "Washer & Dryer",
+      "Backyard",
+      "Garage Parking",
+      "Smart TV"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 2,
+    "images": [
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Luxury Villa",
+    "location": "Miami, FL",
+    "price": "$3,500,000",
+    "description": "5 bedrooms, private pool, ocean view, modern amenities.",
+    "amenities": [
+      "Private Pool",
+      "Ocean View",
+      "Beach Access",
+      "Outdoor Kitchen",
+      "Gym",
+      "Jacuzzi",
+      "24/7 Security"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 3,
+    "images": [
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Cozy Cottage",
+    "location": "Portland, OR",
+    "price": "$750,000",
+    "description": "2 bedrooms, quiet neighborhood, perfect for small families.",
+    "amenities": [
+      "Fireplace",
+      "Garden",
+      "Pet Friendly",
+      "Fully Equipped Kitchen",
+      "Washer",
+      "Reading Nook",
+      "Outdoor Seating Area"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 4,
+    "images": [
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Downtown Apartment",
+    "location": "New York, NY",
+    "price": "$1,000,000",
+    "description": "3 bedrooms, city views, close to subway and restaurants.",
+    "amenities": [
+      "Free Wi-Fi",
+      "Air Conditioning",
+      "City View",
+      "Elevator",
+      "Workspace",
+      "Concierge Service",
+      "Gym Access"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 5,
+    "images": [
+      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Beach House",
+    "location": "Santa Monica, CA",
+    "price": "$2,200,000",
+    "description": "4 bedrooms, oceanfront, private deck and garden.",
+    "amenities": [
+      "Oceanfront",
+      "Private Deck",
+      "Garden",
+      "Outdoor Shower",
+      "BBQ Grill",
+      "Kayaks Available",
+      "Hammocks"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 6,
+    "images": [
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Suburban Home",
+    "location": "Austin, TX",
+    "price": "$850,000",
+    "description": "3 bedrooms, fenced yard, close to schools.",
+    "amenities": [
+      "Free Parking",
+      "Fenced Yard",
+      "Washer & Dryer",
+      "Smart TV",
+      "Playground Nearby",
+      "BBQ Grill",
+      "Fully Equipped Kitchen"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 7,
+    "images": [
+      "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Mountain Cabin",
+    "location": "Denver, CO",
+    "price": "$600,000",
+    "description": "Rustic style, 2 bedrooms, beautiful mountain views.",
+    "amenities": [
+      "Mountain View",
+      "Fireplace",
+      "Hiking Trails Nearby",
+      "Hot Tub",
+      "Outdoor Seating",
+      "Pet Friendly",
+      "Board Games"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 8,
+    "images": [
+      "https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Penthouse Suite",
+    "location": "Chicago, IL",
+    "price": "$2,800,000",
+    "description": "4 bedrooms, rooftop terrace, downtown location.",
+    "amenities": [
+      "Rooftop Terrace",
+      "City Skyline View",
+      "Private Elevator",
+      "Jacuzzi",
+      "Home Theater",
+      "Wine Cellar",
+      "Concierge Service"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 9,
+    "images": [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Country Farmhouse",
+    "location": "Nashville, TN",
+    "price": "$950,000",
+    "description": "5 bedrooms, large land, barn and garden.",
+    "amenities": [
+      "Large Garden",
+      "Barn",
+      "Farm Animals",
+      "Fire Pit",
+      "Wraparound Porch",
+      "BBQ Grill",
+      "Swing Set"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  },
+  {
+    "id": 10,
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=800&q=80"
+    ],
+    "title": "Urban Loft",
+    "location": "Seattle, WA",
+    "price": "$1,100,000",
+    "description": "2 bedrooms, open floor plan, city center.",
+    "amenities": [
+      "Open Floor Plan",
+      "High Ceilings",
+      "City View",
+      "Modern Kitchen",
+      "Washer & Dryer",
+      "Free Wi-Fi",
+      "Workspace"
+    ],
+    "safety_instructions": [
+      "First aid kit available in kitchen.",
+      "Fire extinguisher under the sink.",
+      "Smoke detectors installed in all rooms.",
+      "Emergency contact: +1 234 567 890"
+    ]
+  }
+]

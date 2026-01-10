@@ -1,0 +1,50 @@
+{
+    "id": 101,
+    "name": "Siva Palani",
+    "email": "siva.palani@example.com",
+    "role": "Frontend Developer",
+    "location": "Chennai, India",
+    "experience": "4 years",
+    "skills": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Node.js",
+        "Redux",
+        "TypeScript"
+    ],
+    "bio": "Passionate frontend developer building scalable, responsive, and user-friendly applications. Loves working with modern JavaScript frameworks.",
+    "profilePic": "https://ui-avatars.com/api/?name=Siva+Palani&background=random&size=150",
+    "education": [
+        {
+            "degree": "B.Tech in Computer Science",
+            "institution": "Anna University",
+            "year": "2019"
+        }
+    ],
+    "experienceDetails": [
+        {
+            "company": "TechCorp",
+            "role": "Frontend Developer",
+            "duration": "2021 - Present",
+            "description": "Building high-performance web apps using React, Redux, and Tailwind CSS."
+        },
+        {
+            "company": "Innova",
+            "role": "Junior Developer",
+            "duration": "2019 - 2021",
+            "description": "Worked on backend integration, UI components, and bug fixing."
+        }
+    ],
+    "projects": [
+        {
+            "title": "Job Portal App",
+            "description": "A React-based job search platform with filtering and sorting features."
+        },
+        {
+            "title": "E-Commerce Dashboard",
+            "description": "Full-stack app with product management and analytics."
+        }
+    ]
+}

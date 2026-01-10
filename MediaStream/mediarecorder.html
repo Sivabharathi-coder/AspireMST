@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Stream</title>
+</head>
+
+<body>
+    <button id="start">Start Recording</button>
+    <button id="stop">Stop Recording</button>
+    <audio id="audio" controls></audio>
+
+    <script>
+        let mediaRecorder;
+        let chunks = [];
+
+        document.getElementById("start").onclick = async () => {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            mediaRecorder = new MediaRecorder(stream);
+
+            mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+            mediaRecorder.onstop = () => {
+                const blob = new Blob(chunks, { type: "audio/ogg" });
+                const audioURL = URL.createObjectURL(blob);
+                document.getElementById("audio").src = audioURL;
+                chunks = [];
+            };
+
+            mediaRecorder.start();
+        };
+
+        document.getElementById("stop").onclick = () => {
+            mediaRecorder.stop();
+        };
+    </script>
+
+
+</body>
+
+</html>

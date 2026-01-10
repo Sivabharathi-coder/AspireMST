@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Media Stream</title> 
+</head>
+
+<body>
+    <button id="start">Start Recording</button> 
+    <button id="stop">Stop Recording</button>
+    <audio id="audio" controls></audio>
+
+    <script>
+        let mediaRecorder; // Will hold the MediaRecorder instance
+        let chunks = [];   // To store chunks of recorded audio data
+
+        document.getElementById("start").onclick = async () => {
+            // Ask the user for permission to access the microphone 
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+            // Create a MediaRecorder instance to record the audio stream
+            mediaRecorder = new MediaRecorder(stream);
+
+            // When audio data becomes available, push it into the chunks array
+            mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+
+            // When recording is stopped
+            mediaRecorder.onstop = () => {
+                // Combine all recorded chunks into a single Blob
+                const blob = new Blob(chunks, { type: "audio/ogg" });
+
+                // Create a URL from the Blob so it can be used in the audio element
+                const audioURL = URL.createObjectURL(blob); 
+
+                // Set the audio player's source to the recorded audio
+                document.getElementById("audio").src = audioURL;
+
+                // Reset the chunks array for future recordings
+                chunks = [];
+            };
+
+            // Start recording
+            mediaRecorder.start();
+        };
+
+        // When user clicks "Stop Recording" button
+        document.getElementById("stop").onclick = () => {
+            // Stop the media recorder — this triggers the 'onstop' event above
+            mediaRecorder.stop();
+        };
+    </script>
+</body>
+
+</html>

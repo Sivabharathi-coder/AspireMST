@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Console Methods </title>
+</head>
+
+<body>
+    <script>
+        // 1. console.log()
+        console.log("console.log(): This is a normal log message.");
+
+        // 2. console.error()
+        console.error("console.error(): This is an error message.");
+
+        // 3. console.warn()
+        console.warn("console.warn(): This is a warning message.");
+
+        // 4. console.info()
+        console.info("console.info(): This is an info message.");
+
+        // 5. console.table()
+        const user = { name: "Siva", age: 25, country: "India" };
+        const fruits = ["Apple", "Banana", "Mango"];
+        console.table(user);
+        console.table(fruits);
+
+        // 6. console.time() & console.timeEnd()
+        console.time("Loop Timer");
+        for (let i = 0; i < 1000000; i++) { } // Some delay
+        console.timeEnd("Loop Timer");
+
+        // 7. console.group() & console.groupEnd()
+        console.group("User Details Group");
+        console.log("Name: Siva");
+        console.log("Age: 25");
+        console.groupEnd();
+
+        // 8. console.assert()
+        let score = 45;
+        console.assert(score > 50, "Assertion failed: score is not greater than 50");
+
+        // 9. console.count()
+        console.count("Click Count");
+        console.count("Click Count");
+        console.count("Click Count");
+        console.count("Click Count");
+
+        // 10. console.clear() 
+        // console.clear();
+
+    </script>
+</body>
+    
+</html>

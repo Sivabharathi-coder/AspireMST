@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Window Print Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .print-section {
+            border: 2px dashed #333;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="printContent()">Print Section</button>
+
+    <div class="print-section" id="printSection">
+        <h3>Printable Content</h3>
+        <p>This content will be printed. It is inside a special section styled just for printing.</p>
+    </div>
+
+    <script>
+        function printContent() {
+            window.print();
+        }
+
+        window.addEventListener("beforeprint", () => {
+            console.log(" Preparing to print...");
+        });
+
+        window.addEventListener("afterprint", () => {
+            console.log(" Finished printing.");
+        });
+    </script>
+
+</body>
+
+</html>
